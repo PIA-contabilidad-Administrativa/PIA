@@ -11,6 +11,7 @@ listaimportedeventa1=[]
 listaimportedeventa2=[]
 contadorp=1
 contadoru=0
+contador3=0
 primer="Primer Semestre"
 segundo="Segundo Semestre"
 while menu==1:
@@ -46,11 +47,26 @@ while menu==1:
         listaimportedeventa2.append(unidadavender2*preciodeventa2)
         
         contadoru=contadoru+1
-    print(listaprecioventa)
-    print(listaunidadavender)
-    print(listanombreproduc)
-    print(listaimportedeventa1)
-    print(listaimportedeventa2)
+    #print(listaprecioventa)
+    #print(listaunidadavender)
+    #print(listanombreproduc)
+    #print(listaimportedeventa1)
+    #print(listaimportedeventa2)
+    print(separador+"Respuestas del Presupuesto de Ventas"+separador)
+
+    for nombre in listanombreproduc:
+        print(nombre+":")
+        for x in range(productocon):
+            print("PRIMER SEMESTRE")
+            print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
+            print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
+            contador3=contador3+1
+            print("SEGUNDO SEMESTRE")
+            print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
+            print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
+            print(separador)
+
+
 
 
 
