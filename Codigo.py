@@ -23,19 +23,26 @@ while menu==1:
         contadorp=contadorp+1
 
     for producto in listanombreproduc:
+        print(separador)
         unidadavender=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {primer} : "))
         listaunidadavender.append(unidadavender)
 
-        preciodeventa=float(input(f"Dime el precio de Venta de el producto {listanombreproduc[contadoru]} del {primer}"))
+        preciodeventa=float(input(f"Dime el precio de Venta de el producto {listanombreproduc[contadoru]} del {primer} : "))
         listaprecioventa.append(preciodeventa)
+        print(separador)
 
-        unidadavender2=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {segundo}"))
+        unidadavender2=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {segundo} : "))
         listaunidadavender.append(unidadavender2)
+        print(separador)
 
-        preciodeventa2=float(input(f"Dime el precio de Venta de el producto {listanombreproduc[contadoru]} del {segundo}"))
+        preciodeventa2=float(input(f"Dime el precio de Venta de el producto {listanombreproduc[contadoru]} del {segundo}" : ))
         listaprecioventa.append(preciodeventa2)
+        print(separador)
         
         contadoru=contadoru+1
+    print(listaprecioventa)
+    print(listaunidadavender)
+    print(listaprecioventa)
 
 
 
