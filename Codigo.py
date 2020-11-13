@@ -48,11 +48,7 @@ while menu==1:
         listaimportedeventa2.append(unidadavender2*preciodeventa2)
         
         contadoru=contadoru+1
-    #print(listaprecioventa)
-    #print(listaunidadavender)
-    #print(listanombreproduc)
-    #print(listaimportedeventa1)
-    #print(listaimportedeventa2)
+        
     print(separador+"Respuestas del Presupuesto de Ventas"+separador)
 
     for nombre in listanombreproduc:
