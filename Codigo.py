@@ -5,8 +5,7 @@ separador=("*"*30)
 menu=1
 listanombreproduc=[]
 listaunidadavender=[]
-listadelistas=[]
-listadelistas.append(listaunidadavender)
+listaprecioventa=[]
 contadorp=1
 contadoru=0
 primer="Primer Semestre"
@@ -24,12 +23,19 @@ while menu==1:
         contadorp=contadorp+1
 
     for producto in listanombreproduc:
-        unidadavender=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {primer}"))
+        unidadavender=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {primer} : "))
+        listaunidadavender.append(unidadavender)
+
         preciodeventa=float(input(f"Dime el precio de Venta de el producto {listanombreproduc[contadoru]} del {primer}"))
-        contadoru=contadoru+1
+        listaprecioventa.append(preciodeventa)
+
         unidadavender2=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {segundo}"))
+        listaunidadavender.append(unidadavender2)
+
         preciodeventa2=float(input(f"Dime el precio de Venta de el producto {listanombreproduc[contadoru]} del {segundo}"))
-        listaunidadavender.append(unidadavender,preciodeventa,unidadavender2,preciodeventa2)
+        listaprecioventa.append(preciodeventa2)
         
+        contadoru=contadoru+1
+
 
 
