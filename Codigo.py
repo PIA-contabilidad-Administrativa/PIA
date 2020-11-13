@@ -69,9 +69,13 @@ while menu==1:
     totalventasS2=(sum(listaimportedeventa2))
     VENTASTOTALES=(totalventasS1+totalventasS2)
     print(separador)
-    print(totalventasS1)
-    print(totalventasS2)
+    print("Total PrimerS\t", end="")
+    print("Total SegundoS\t", end="")
+    print("Ventas Totales")
+    print(f"{totalventasS1}\t",end="")
+    print(f"{totalventasS2}\t",end="")
     print(VENTASTOTALES)
+
 
 
 
