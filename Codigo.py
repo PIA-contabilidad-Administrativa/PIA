@@ -35,7 +35,7 @@ while menu==1:
         listaunidadavender.append(unidadavender2)
         print(separador)
 
-        preciodeventa2=float(input(f"Dime el precio de Venta de el producto {listanombreproduc[contadoru]} del {segundo}" : ))
+        preciodeventa2=float(input(f"Dime el precio de Venta de el producto {listanombreproduc[contadoru]} del {segundo} : "))
         listaprecioventa.append(preciodeventa2)
         print(separador)
         
