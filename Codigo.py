@@ -12,6 +12,7 @@ listaimportedeventa2=[]
 contadorp=1
 contadoru=0
 contador3=0
+contador4=0
 primer="Primer Semestre"
 segundo="Segundo Semestre"
 while menu==1:
@@ -59,14 +60,23 @@ while menu==1:
         print("PRIMER SEMESTRE")
         print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
         print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
-        print(f"IMPORTE DE VENTA: {listaimportedeventa1[contador3]}")
+        print(f"IMPORTE DE VENTA: {listaimportedeventa1[contador4]}")
         contador3=contador3+1
         print("SEGUNDO SEMESTRE")
         print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
         print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
-        print(f"IMPORTE DE VENTA: {listaimportedeventa2[contador3]}")
+        print(f"IMPORTE DE VENTA: {listaimportedeventa2[contador4]}")
         print(separador)
         contador3=contador3+1
+        contador4=contador4+1
+    totalventasS1=(sum(listaimportedeventa1))
+    totalventasS2=(sum(listaimportedeventa2))
+    VENTASTOTALES=(totalventasS1+totalventasS2)
+    print(separador)
+    print(totalventasS1)
+    print(totalventasS2)
+    print(VENTASTOTALES)
+
 
 
 
