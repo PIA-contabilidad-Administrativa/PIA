@@ -56,15 +56,17 @@ while menu==1:
 
     for nombre in listanombreproduc:
         print(nombre+":")
-        for x in range(productocon):
-            print("PRIMER SEMESTRE")
-            print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
-            print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
-            contador3=contador3+1
-            print("SEGUNDO SEMESTRE")
-            print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
-            print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
-            print(separador)
+        print("PRIMER SEMESTRE")
+        print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
+        print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
+        print(f"IMPORTE DE VENTA: {listaimportedeventa1[contador3]}")
+        contador3=contador3+1
+        print("SEGUNDO SEMESTRE")
+        print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
+        print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
+        print(f"IMPORTE DE VENTA: {listaimportedeventa2[contador3]}")
+        print(separador)
+        contador3=contador3+1
 
 
 
