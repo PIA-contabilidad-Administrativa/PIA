@@ -21,7 +21,8 @@ while menu==1:
     print("-"*15+" Este programa realiza el Presupuesto Maestro "+"-"*15)
     print("")
     #Preguntar datos y agregar a variables
-    año=input("Dime el año : ")
+    año=input("Dime el año 1 : ")
+    año2=input("Dime el año 2: ")
     productocon=int(input("Dime cuantos productos son :"))
     for producto in range(productocon):
         nombre=input(f"Dime el nombre del Producto{contadorp} :")
@@ -75,9 +76,8 @@ while menu==1:
     print(f"{totalventasS1}\t",end="")
     print(f"{totalventasS2}\t",end="")
     print(VENTASTOTALES)
+    print(separador*2)
 
-
-    print(separador+"Determinacion de saldo de clientes y flujo de entradas"+separador)
     saldoCliente=float(input("Dime el saldo de Clientes del Balance General : "))
     totalCliente=(saldoCliente+VENTASTOTALES)
 
@@ -86,10 +86,18 @@ while menu==1:
     totalEntradas=(cobranza+saldoCliente)
     SALDODECLIENTES=(totalCliente-totalEntradas)
 
-    print(totalCliente)
-    print(cobranza)
-    print(totalEntradas)
-    print(SALDODECLIENTES)
+    print(separador+"Determinacion de saldo de clientes y flujo de entradas"+separador)
+    print(f"Saldo de Clientes {año} : {saldoCliente}")
+    print(f"Ventas: {VENTASTOTALES}")
+    print(f"Total de Clientes {totalCliente}")
+    print("")
+    print("Entradas de Efectivo: ")
+    print(f"Por cobranza del {año}: {saldoCliente}")
+    print(f"Por cobranza del {año2}: {cobranza}")
+    print(f"Total de Entradas del {año2} : {totalEntradas}")
+    print(f"Saldo de Clientes del {año2} : {SALDODECLIENTES}")
+
+
 
 
 
