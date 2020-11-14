@@ -30,7 +30,7 @@ try:
             listanombreproduc.append(nombre)
             contadorp=contadorp+1
         print(separador)
-
+        #TABLA 1
         for producto in listanombreproduc:
             unidadavender=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {primer} : "))
             listaunidadavender.append(unidadavender)
@@ -115,7 +115,8 @@ try:
         archivoA.write("Total de Ventas por Semestre: "+str(VENTASTOTALES)+"\n" )
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
-
+        # FINAL TABLA 1
+        #TABLA 2
         saldoCliente=float(input("Dime el saldo de Clientes del Balance General : "))
         totalCliente=(saldoCliente+VENTASTOTALES)
 
@@ -155,6 +156,8 @@ try:
         archivoA.write("Saldo de Clientes del "+str(año2)+": "+str(SALDODECLIENTES)+"\n" )
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
+        #FINAL TABLA 2
+
 
 except:
     print("Intenta respetar lo que se te pide :)")
