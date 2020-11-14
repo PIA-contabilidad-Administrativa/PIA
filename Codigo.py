@@ -48,20 +48,52 @@ while menu==1:
         listaimportedeventa2.append(unidadavender2*preciodeventa2)
         
         contadoru=contadoru+1
-        
+    archivoA=open("./respuestas.txt" , 'a')
     print(separador+"Respuestas del Presupuesto de Ventas"+separador)
+    archivoA.write("-"*15+"Respuestas del Presupuesto de Ventas"+"-"*15 +"\n" )
+    archivoA.write("\n" )
+    archivoA.write("-"*30 +"\n" )
 
     for nombre in listanombreproduc:
         print(nombre+":")
-        print("PRIMER SEMESTRE")
+        texto1=str(nombre)
+        archivoA.write(texto1+":" +"\n" )
+
+        print("PRIMER SEMESTRE:")
+        archivoA.write("\n" )
+        archivoA.write("PRIMER SEMESTRE:" +"\n" )
+
         print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
+        texto2=str(listaunidadavender[contador3])
+        archivoA.write("UNIDADES A VENDER: "+texto2+"\n" )
+
         print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
+        texto3=str(listaprecioventa[contador3])
+        archivoA.write("PRECIO DE VENTA: "+texto3+"\n" )
+
         print(f"IMPORTE DE VENTA: {listaimportedeventa1[contador4]}")
+        texto4=str(listaimportedeventa1[contador4])
+        archivoA.write("IMPORTE DE VENTA: "+texto4+"\n" )
+
         contador3=contador3+1
-        print("SEGUNDO SEMESTRE")
+        print("SEGUNDO SEMESTRE:")
+        archivoA.write("\n" )
+        archivoA.write("SEGUNDO SEMESTRE: "+"\n" )
+
         print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
-        print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
+        texto5=str(listaunidadavender[contador3])
+        archivoA.write("UNIDADES A VENDER: "+texto5+"\n" )
+
+
+        print(f"PRECIO DE VENTA: {listaprecioventa[contador3]}")
+        texto6=str(listaprecioventa[contador3])
+        archivoA.write("PRECIO DE VENTA: "+texto6+"\n" )
+
         print(f"IMPORTE DE VENTA: {listaimportedeventa2[contador4]}")
+        texto7=str(listaimportedeventa2[contador4])
+        archivoA.write("IMPORTE DE VENTA: "+texto7+"\n" )
+        archivoA.write("-"*30 +"\n" )
+
         print(separador)
         contador3=contador3+1
         contador4=contador4+1
@@ -76,6 +108,12 @@ while menu==1:
     print(f"{totalventasS2}\t",end="")
     print(VENTASTOTALES)
     print(separador*2)
+    archivoA.write("\n" )
+    archivoA.write("Totales Primer Semestre: "+str(totalventasS1)+"\n" )
+    archivoA.write("Totales Segundo Semestre: "+str(totalventasS2)+"\n" )
+    archivoA.write("Total de Ventas por Semestre: "+str(VENTASTOTALES)+"\n" )
+    archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+    archivoA.close()
 
     saldoCliente=float(input("Dime el saldo de Clientes del Balance General : "))
     totalCliente=(saldoCliente+VENTASTOTALES)
