@@ -81,6 +81,8 @@ while menu==1:
     saldoCliente=float(input("Dime el saldo de Clientes del Balance General : "))
     totalCliente=(saldoCliente+VENTASTOTALES)
 
+    
+
 
 
 
