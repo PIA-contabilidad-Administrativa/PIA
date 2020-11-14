@@ -1,7 +1,7 @@
 import sys
 import datetime
 
-separador=("*"*30)
+separador=("*"*50)
 menu=1
 listanombreproduc=[]
 listaunidadavender=[]
@@ -25,7 +25,7 @@ while menu==1:
     año2=input("Dime el año 2: ")
     productocon=int(input("Dime cuantos productos son :"))
     for producto in range(productocon):
-        nombre=input(f"Dime el nombre del Producto{contadorp} :")
+        nombre=input(f"Dime el nombre del Producto {contadorp} :")
         listanombreproduc.append(nombre)
         contadorp=contadorp+1
     print(separador)
