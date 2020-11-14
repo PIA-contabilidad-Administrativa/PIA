@@ -122,17 +122,38 @@ while menu==1:
     cobranza=(VENTASTOTALES*porcentaje)
     totalEntradas=(cobranza+saldoCliente)
     SALDODECLIENTES=(totalCliente-totalEntradas)
+    archivoA=open("./respuestas.txt" , 'a')
+    archivoA.write("\n" )
+    archivoA.write("-"*15+"Determinacion de saldo de clientes y flujo de entradas"+"-"*15 +"\n" )
 
     print(separador+"Determinacion de saldo de clientes y flujo de entradas"+separador)
     print(f"Saldo de Clientes {año} : {saldoCliente}")
+    archivoA.write("Saldo de Clientes "+str(año)+": "+str(saldoCliente)+"\n" )
+
     print(f"Ventas {año2}: {VENTASTOTALES}")
+    archivoA.write("Ventas "+str(año2)+": "+str(VENTASTOTALES)+"\n" )
+
     print(f"Total de Clientes {año2}: {totalCliente}")
+    archivoA.write("Total de Clientes "+str(año2)+". "+str(totalCliente)+"\n" )
+
     print("")
+    archivoA.write("\n" )
     print("Entradas de Efectivo: ")
+    archivoA.write("Entradas de Efectivo: "+"\n" )
+
     print(f"Por cobranza del {año}: {saldoCliente}")
+    archivoA.write("Por cobranza del "+str(año)+": "+str(saldoCliente)+"\n" )
+
     print(f"Por cobranza del {año2}: {cobranza}")
+    archivoA.write("Por cobranza del "+str(año2)+": "+str(cobranza)+"\n" )
+    archivoA.write("\n" )
     print(f"Total de Entradas del {año2} : {totalEntradas}")
+    archivoA.write("Total de Entradas del "+str(año2)+": "+str(totalEntradas)+"\n" )
+
     print(f"Saldo de Clientes del {año2} : {SALDODECLIENTES}")
+    archivoA.write("Saldo de Clientes del "+str(año2)+": "+str(SALDODECLIENTES)+"\n" )
+    archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+    archivoA.close()
 
 
 
