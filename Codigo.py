@@ -28,9 +28,9 @@ while menu==1:
         nombre=input(f"Dime el nombre del Producto{contadorp} :")
         listanombreproduc.append(nombre)
         contadorp=contadorp+1
+    print(separador)
 
     for producto in listanombreproduc:
-        print(separador)
         unidadavender=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {primer} : "))
         listaunidadavender.append(unidadavender)
 
@@ -41,7 +41,6 @@ while menu==1:
 
         unidadavender2=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {segundo} : "))
         listaunidadavender.append(unidadavender2)
-        print(separador)
 
         preciodeventa2=float(input(f"Dime el precio de Venta de el producto {listanombreproduc[contadoru]} del {segundo} : "))
         listaprecioventa.append(preciodeventa2)
@@ -88,8 +87,8 @@ while menu==1:
 
     print(separador+"Determinacion de saldo de clientes y flujo de entradas"+separador)
     print(f"Saldo de Clientes {año} : {saldoCliente}")
-    print(f"Ventas: {VENTASTOTALES}")
-    print(f"Total de Clientes {totalCliente}")
+    print(f"Ventas {año2}: {VENTASTOTALES}")
+    print(f"Total de Clientes {año2}: {totalCliente}")
     print("")
     print("Entradas de Efectivo: ")
     print(f"Por cobranza del {año}: {saldoCliente}")
