@@ -81,7 +81,16 @@ while menu==1:
     saldoCliente=float(input("Dime el saldo de Clientes del Balance General : "))
     totalCliente=(saldoCliente+VENTASTOTALES)
 
-    
+    porcentaje=float(input("Cuanto porcentaje del total de Ventas se va aplicar por cobranza ejemplo(.80) : "))
+    cobranza=(VENTASTOTALES*porcentaje)
+    totalEntradas=(cobranza+saldoCliente)
+    SALDODECLIENTES=(totalCliente-totalEntradas)
+
+    print(totalCliente)
+    print(cobranza)
+    print(totalEntradas)
+    print(SALDODECLIENTES)
+
 
 
 
