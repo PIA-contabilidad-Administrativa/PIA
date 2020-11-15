@@ -64,65 +64,47 @@ try:
             
             contadoru=contadoru+1
         archivoA=open("./respuestas.txt" , 'a')
-        print(separador+"Respuestas del Presupuesto de Ventas"+separador)
         archivoA.write("-"*15+"Respuestas del Presupuesto de Ventas"+"-"*15 +"\n" )
         archivoA.write("\n" )
         archivoA.write("-"*30 +"\n" )
 
         for nombre in listanombreproduc:
-            print(nombre+":")
             texto1=str(nombre)
             archivoA.write(texto1+":" +"\n" )
 
-            print("PRIMER SEMESTRE:")
             archivoA.write("\n" )
             archivoA.write("PRIMER SEMESTRE:" +"\n" )
 
-            print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
             texto2=str(listaunidadavender[contador3])
             archivoA.write("UNIDADES A VENDER: "+texto2+"\n" )
 
-            print(f"PRECIO DE VENTA:{listaprecioventa[contador3]}")
             texto3=str(listaprecioventa[contador3])
             archivoA.write("PRECIO DE VENTA: "+texto3+"\n" )
 
-            print(f"IMPORTE DE VENTA: {listaimportedeventa1[contador4]}")
             texto4=str(listaimportedeventa1[contador4])
             archivoA.write("IMPORTE DE VENTA: "+texto4+"\n" )
 
             contador3=contador3+1
-            print("SEGUNDO SEMESTRE:")
             archivoA.write("\n" )
             archivoA.write("SEGUNDO SEMESTRE: "+"\n" )
 
-            print(f"UNIDADES A VENDER: {listaunidadavender[contador3]}")
             texto5=str(listaunidadavender[contador3])
             archivoA.write("UNIDADES A VENDER: "+texto5+"\n" )
 
 
-            print(f"PRECIO DE VENTA: {listaprecioventa[contador3]}")
             texto6=str(listaprecioventa[contador3])
             archivoA.write("PRECIO DE VENTA: "+texto6+"\n" )
 
-            print(f"IMPORTE DE VENTA: {listaimportedeventa2[contador4]}")
             texto7=str(listaimportedeventa2[contador4])
             archivoA.write("IMPORTE DE VENTA: "+texto7+"\n" )
             archivoA.write("-"*30 +"\n" )
 
-            print(separador)
+            
             contador3=contador3+1
             contador4=contador4+1
         totalventasS1=(sum(listaimportedeventa1))
         totalventasS2=(sum(listaimportedeventa2))
         VENTASTOTALES=(totalventasS1+totalventasS2)
-        print(separador)
-        print("Total PrimerS\t", end="")
-        print("Total SegundoS\t", end="")
-        print("Ventas Totales")
-        print(f"{totalventasS1}\t",end="")
-        print(f"{totalventasS2}\t",end="")
-        print(VENTASTOTALES)
-        print(separador*2)
         archivoA.write("\n" )
         archivoA.write("Totales Primer Semestre: "+str(totalventasS1)+"\n" )
         archivoA.write("Totales Segundo Semestre: "+str(totalventasS2)+"\n" )
@@ -131,6 +113,7 @@ try:
         archivoA.close()
         # FINAL TABLA 1
         #TABLA 2
+        print(separador)
         saldoCliente=float(input("Dime el saldo de Clientes del Balance General : "))
         totalCliente=(saldoCliente+VENTASTOTALES)
 
@@ -142,31 +125,23 @@ try:
         archivoA.write("\n" )
         archivoA.write("-"*15+"Determinacion de saldo de clientes y flujo de entradas"+"-"*15 +"\n" )
         print("")
-        print(separador+"Determinacion de saldo de clientes y flujo de entradas"+separador)
-        print(f"Saldo de Clientes {año} : {saldoCliente}")
         archivoA.write("Saldo de Clientes "+str(año)+": "+str(saldoCliente)+"\n" )
 
-        print(f"Ventas {año2}: {VENTASTOTALES}")
         archivoA.write("Ventas "+str(año2)+": "+str(VENTASTOTALES)+"\n" )
 
-        print(f"Total de Clientes {año2}: {totalCliente}")
         archivoA.write("Total de Clientes "+str(año2)+": "+str(totalCliente)+"\n" )
 
-        print("")
+        
         archivoA.write("\n" )
-        print("Entradas de Efectivo: ")
         archivoA.write("Entradas de Efectivo: "+"\n" )
 
-        print(f"Por cobranza del {año}: {saldoCliente}")
         archivoA.write("Por cobranza del "+str(año)+": "+str(saldoCliente)+"\n" )
 
-        print(f"Por cobranza del {año2}: {cobranza}")
         archivoA.write("Por cobranza del "+str(año2)+": "+str(cobranza)+"\n" )
         archivoA.write("\n" )
-        print(f"Total de Entradas del {año2} : {totalEntradas}")
         archivoA.write("Total de Entradas del "+str(año2)+": "+str(totalEntradas)+"\n" )
 
-        print(f"Saldo de Clientes del {año2} : {SALDODECLIENTES}")
+        
         archivoA.write("Saldo de Clientes del "+str(año2)+": "+str(SALDODECLIENTES)+"\n" )
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
@@ -174,8 +149,6 @@ try:
 
          #TABLA 3
         #PRESUPUESTO DE PRODUCCION
-        print("")
-        print(separador+"PRESUPUESTO DE PRODUCCION"+separador)
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("\n" )
         archivoA.write("-"*15+"PRESUPUESTO DE PRODUCCION"+"-"*15 +"\n" )
