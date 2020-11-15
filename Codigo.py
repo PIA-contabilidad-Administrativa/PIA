@@ -15,6 +15,8 @@ lista_invinicial1=[]
 lista_invinicial2=[]
 lista_total_unidades1=[]
 lista_total_unidades2=[]
+lista_unidad_producir=[]
+lista_suma_camisas_producir=[]
 contadorp=1
 contadoru=0
 contador3=0
@@ -22,6 +24,9 @@ contador4=0
 contador5=0
 contador6=0
 contador7=0
+contador8=0
+contador9=0
+contador10=0
 primer="Primer Semestre"
 segundo="Segundo Semestre"
 try:
@@ -190,6 +195,11 @@ try:
             lista_invinicial1.append(inv_inicial_1)
             archivoA.write("Inventario inicial : "+str(inv_inicial_1)+"\n" )
 
+            lista_unidad_producir.append(total_unidades1-inv_inicial_1)
+            archivoA.write("Unidades a Producir: "+str(lista_unidad_producir[contador8])+"\n" )
+            contador8=contador8+1
+
+
             print("")
             archivoA.write("\n" )
             archivoA.write("SEGUNDO SEMESTRE :"+"\n" )
@@ -209,10 +219,27 @@ try:
             lista_invinicial2.append(inv_inicial_2)
             archivoA.write("Inventario inicial : "+str(inv_inicial_2)+"\n" )
             print(separador)
+
+            lista_unidad_producir.append(total_unidades2-inv_inicial_2)
+            archivoA.write("Unidades a Producir: "+str(lista_unidad_producir[contador8])+"\n" )
+
             
+            x=lista_unidad_producir[contador9]
+            contador9=contador9+1
+            y=lista_unidad_producir[contador9]
+            total=(x+y)
+            lista_suma_camisas_producir.append(total)
+            archivoA.write("\n" )
+            archivoA.write("TOTAL "+str(año2)+" primer semestre y segundo: "+str(lista_suma_camisas_producir[contador10])+"\n" )
+            archivoA.write("--------------------------------" +"\n" )
+
+
             contador5=contador5+1
             contador6=contador6+1
             contador7=contador7+1
+            contador8=contador8+1
+            contador9=contador9+1
+            contador10=contador10+1
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
         
