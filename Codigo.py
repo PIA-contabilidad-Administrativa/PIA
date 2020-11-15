@@ -167,10 +167,12 @@ try:
 
          #TABLA 3
         #PRESUPUESTO DE PRODUCCION
-        
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("\n" )
         for producto in listanombreproduc:
             inv_final_1=float(input(f"Dime le inventario final de {listanombreproduc[contador5]} del primer semestre: "))
             lista_invfinal1.append(inv_final_1)
+            archivoA.write("Inventario final de "+str(listanombreproduc[contador5])+" del primer semestre"+": "+str(inv_final_1)+"\n" )
             
             total_unidades1 = listaunidadavender[contador5] + lista_invfinal1[contador5]
             lista_total_unidades1.append(total_unidades1)
