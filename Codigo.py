@@ -167,31 +167,48 @@ try:
 
          #TABLA 3
         #PRESUPUESTO DE PRODUCCION
+        print("")
+        print(separador+"PRESUPUESTO DE PRODUCCION"+separador)
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("\n" )
+        archivoA.write("-"*15+"PRESUPUESTO DE PRODUCCION"+"-"*15 +"\n" )
         for producto in listanombreproduc:
+            archivoA.write("\n" )
+            archivoA.write("PRIMER SEMESTRE :"+"\n" )
+            archivoA.write(producto+":"+"\n")
             inv_final_1=float(input(f"Dime le inventario final de {listanombreproduc[contador5]} del primer semestre: "))
             lista_invfinal1.append(inv_final_1)
             archivoA.write("Inventario final de "+str(listanombreproduc[contador5])+" del primer semestre"+": "+str(inv_final_1)+"\n" )
             
             total_unidades1 = listaunidadavender[contador5] + lista_invfinal1[contador5]
             lista_total_unidades1.append(total_unidades1)
+            archivoA.write("Total de unidades : "+str(total_unidades1)+"\n" )
+
+            inv_inicial_1=float(input(f"Dime el inventario inicial de {listanombreproduc[contador5]} del primer semestre: "))
+            lista_invinicial1.append(inv_inicial_1)
+            archivoA.write("Inventario inicial : "+str(inv_inicial_1)+"\n" )
+
+            print("")
+            archivoA.write("\n" )
+            archivoA.write("SEGUNDO SEMESTRE :"+"\n" )
         
             inv_final_2=float(input(f"Dime le inventario final de {listanombreproduc[contador5]} del segundo semestre: "))
             lista_invfinal2.append(inv_final_2)
+            archivoA.write("Inventario final de "+str(listanombreproduc[contador5])+" del segundo semestre"+": "+str(inv_final_2)+"\n" )
             
             total_unidades2 = listaunidadavender[contador5+1] + lista_invfinal2[contador5]
             lista_total_unidades2.append(total_unidades2)
-                
-            inv_inicial_1=float(input(f"Dime el inventario inicial de {listanombreproduc[contador5]} del primer semestre: "))
-            lista_invinicial1.append(inv_inicial_1)
-        
+            archivoA.write("Total de unidades : "+str(total_unidades2)+"\n" )
+            
+
             inv_inicial_2= float(input(f"Dime el inventario inicial de {listanombreproduc[contador5]} del segundo semestre: "))
             lista_invinicial2.append(inv_inicial_2)
+            archivoA.write("Inventario inicial : "+str(inv_inicial_2)+"\n" )
+            print(separador)
             
-            
-        
             contador5= contador5+1
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.close()
         
 
 
