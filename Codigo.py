@@ -20,6 +20,8 @@ contadoru=0
 contador3=0
 contador4=0
 contador5=0
+contador6=0
+contador7=0
 primer="Primer Semestre"
 segundo="Segundo Semestre"
 try:
@@ -180,7 +182,7 @@ try:
             lista_invfinal1.append(inv_final_1)
             archivoA.write("Inventario final de "+str(listanombreproduc[contador5])+" del primer semestre"+": "+str(inv_final_1)+"\n" )
             
-            total_unidades1 = listaunidadavender[contador5] + lista_invfinal1[contador5]
+            total_unidades1 = listaunidadavender[contador6] + lista_invfinal1[contador7]
             lista_total_unidades1.append(total_unidades1)
             archivoA.write("Total de unidades : "+str(total_unidades1)+"\n" )
 
@@ -196,7 +198,9 @@ try:
             lista_invfinal2.append(inv_final_2)
             archivoA.write("Inventario final de "+str(listanombreproduc[contador5])+" del segundo semestre"+": "+str(inv_final_2)+"\n" )
             
-            total_unidades2 = listaunidadavender[contador5+1] + lista_invfinal2[contador5]
+            contador6=contador6+1
+            
+            total_unidades2 = listaunidadavender[contador6] + lista_invfinal2[contador7]
             lista_total_unidades2.append(total_unidades2)
             archivoA.write("Total de unidades : "+str(total_unidades2)+"\n" )
             
@@ -206,7 +210,9 @@ try:
             archivoA.write("Inventario inicial : "+str(inv_inicial_2)+"\n" )
             print(separador)
             
-            contador5= contador5+1
+            contador5=contador5+1
+            contador6=contador6+1
+            contador7=contador7+1
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
         
