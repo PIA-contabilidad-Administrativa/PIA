@@ -290,6 +290,43 @@ try:
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
 
+        contador25=1
+        contador14=0
+        contador15=0
+        contador17=0
+        lista_total_materiales=[]
+        archivoA=open("./respuestas.txt" , 'a')
+        for producto in listanombreproduc:
+            archivoA.write("\n" )
+            archivoA.write(producto+":"+"\n" )
+            archivoA.write("SEGUNDO SEMESTRE:"+"\n" )
+            archivoA.write("\n" )
+            archivoA.write("Unidades a producir:"+str(lista_unidad_producir[contador25])+"\n" )
+            archivoA.write("\n" )
+            contador13=0
+            contador16=0
+            for material in lista_nombre_material:
+                
+                archivoA.write("MATERIAL "+str(lista_nombre_material[contador13])+":"+"\n" )
+                
+                
+                x=(lista_unidad_producir[contador25]*lista_req[contador15])
+                lista_total_materiales.append(x)
+                archivoA.write("Requerimiento de material:"+str(lista_req[contador14])+"\n" )
+                archivoA.write("TOTAL DE MATERIAL "+str(lista_nombre_material[contador16])+":"+str(lista_total_materiales[contador17])+"\n" )
+                archivoA.write("\n" )
+                listamat2.append(x)
+               
+                contador13=contador13+1
+                contador14=contador14+1
+                contador15=contador15+1
+                contador16=contador16+1
+                contador17=contador17+1
+            contador25=contador25+2
+                
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.close()
+
 
 
 
