@@ -17,6 +17,12 @@ lista_total_unidades1=[]
 lista_total_unidades2=[]
 lista_unidad_producir=[]
 lista_suma_camisas_producir=[]
+lista_nombre_material=[]
+lista_total_materiales=[]
+lista_req=[]
+lista_total_total_materiales=[]
+listamat1=[]
+listamat2=[]
 contadorp=1
 contadoru=0
 contador3=0
@@ -27,6 +33,18 @@ contador7=0
 contador8=0
 contador9=0
 contador10=0
+contador11=0
+contador12=0
+contador13=0
+contador14=0
+contador15=0
+contador16=0
+contador17=0
+contador18=0
+contador19=0
+contador20=0
+contador21=0
+contador22=1
 primer="Primer Semestre"
 segundo="Segundo Semestre"
 try:
@@ -215,6 +233,67 @@ try:
             contador10=contador10+1
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
+
+        #TABLA 4
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("\n" )
+        archivoA.write("-"*15+"PRESUPUESTO DE REQUERIMIENTO DE MATERIALES" +"-"*15 +"\n" )
+
+        x=lista_unidad_producir[contador12]
+        contador12=contador12+1
+        y=lista_unidad_producir[contador12]
+        suma=(x+y)
+
+        cuantos=int(input("Cuantos materiales tienes :"))
+        for material in range(cuantos):
+            material=input("Dime el nombre del material : ")
+            lista_nombre_material.append(material)
+        print(separador)
+
+        
+
+        for producto in listanombreproduc:
+            archivoA.write("\n" )
+            archivoA.write(producto+":"+"\n" )
+            archivoA.write("PRIMER SEMESTRE:"+"\n" )
+            archivoA.write("\n" )
+            archivoA.write("Unidades a producir:"+str(lista_unidad_producir[contador21])+"\n" )
+            archivoA.write("\n" )
+            contador13=0
+            contador16=0
+            for material in lista_nombre_material:
+                
+                archivoA.write("MATERIAL "+str(lista_nombre_material[contador13])+":"+"\n" )
+                
+
+                for req in range(1):
+                    print(producto)
+                    print("")
+                    requerimientoM=float(input(f"Dime el requerimiento de Material {material}: "))
+                    lista_req.append(requerimientoM)
+                print(separador)
+                
+                x=(lista_unidad_producir[contador21]*lista_req[contador15])
+                lista_total_materiales.append(x)
+                archivoA.write("Requerimiento de material:"+str(lista_req[contador14])+"\n" )
+                archivoA.write("TOTAL DE MATERIAL "+str(lista_nombre_material[contador16])+":"+str(lista_total_materiales[contador17])+"\n" )
+                archivoA.write("\n" )
+                listamat1.append(x)
+               
+                contador13=contador13+1
+                contador14=contador14+1
+                contador15=contador15+1
+                contador16=contador16+1
+                contador17=contador17+1
+            contador21=contador21+2
+                
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.close()
+
+
+
+
+
         
 
 
