@@ -453,6 +453,9 @@ try:
             contador23=contador23+1
         
         archivoA.write("COMPRAS TOTALES : "+str(sum(compras_totales[3::1]))+"\n")
+        archivoA.write("\n" )
+        # ESTO ES LO QUE USARAS LUIS LA LISTA QUE SE LLAMA  compras_totales que es igual:  $2,141,010 
+        archivoA.write(" TOTAL : "+año2+str(sum(compras_totales))+"\n")
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.write("\n" )
         archivoA.close()
