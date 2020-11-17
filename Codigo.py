@@ -23,6 +23,8 @@ lista_req=[]
 lista_total_total_materiales=[]
 listamat1=[]
 listamat2=[]
+compras_totales=[]
+listareu=[]
 contadorp=1
 contadoru=0
 contador3=0
@@ -45,6 +47,8 @@ contador19=0
 contador20=0
 contador21=0
 contador22=1
+contador23=0
+contador24=0
 primer="Primer Semestre"
 segundo="Segundo Semestre"
 try:
@@ -327,13 +331,25 @@ try:
 
         archivoA.write("TOTAL DE REQUERIMIENTOS:" +"\n" )
         archivoA.write("\n" )
+        listaMateriales=[]
         materialA1=sum(listamat1[0::3])
+        listaMateriales.append(materialA1)
+
         materialB1=sum(listamat1[1::3])
+        listaMateriales.append(materialB1)
+
         materialC1=sum(listamat1[2::3])
+        listaMateriales.append(materialC1)
 
         materialA2=sum(listamat2[0::3])
+        listaMateriales.append(materialA2)
+
         materialB2=sum(listamat2[1::3])
+        listaMateriales.append(materialB2)
+
         materialC2=sum(listamat2[2::3])
+        listaMateriales.append(materialC2)
+
         archivoA.write("PRIMER SEMESTRE :" +"\n" )
         
         archivoA.write("MATERIAL A  :" +str(materialA1)+"\n" )
@@ -361,11 +377,81 @@ try:
         archivoA.close()
     # FIN TABLA 4
 
+        #TABLA 5 
+        #semestre 1
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"PRESUPUESTO DE COMPRAS DE MATERIALES" +"-"*15 +"\n" )
+        archivoA.write("\n" )
+        archivoA.write("PRIMER SEMESTRE:"+"\n")
+        
+        for material in lista_nombre_material:
 
+            archivoA.write("MATERIAL "+material+" :"+"\n" )
+            archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
+            inventarioFinal=int(input(f"Dime el inventario Final {material} :  "))
+            listareu.append(inventarioFinal)
 
+            archivoA.write("Inventario Final: "+str(inventarioFinal)+"\n")
+            total_materiales=(listaMateriales[contador23]+inventarioFinal)
+            archivoA.write("Total de Materiales: "+str(total_materiales)+"\n")
 
+            inventarioInicial=int(input(f"Dime el inventario Inicial {material} :"))
+            archivoA.write("Inventario Inicial: "+str(inventarioInicial)+"\n")
+
+            material_comprar=(total_materiales-inventarioInicial)
+            archivoA.write("Material a Comprar : "+str(material_comprar)+"\n")
+
+            precio_compra=int(input(f"Dime el precio de compra {material} : "))
+            archivoA.write("Precio de Compra : "+str(precio_compra)+"\n")
+
+            total_material=(material_comprar * precio_compra)
+            compras_totales.append(total_material)
+            archivoA.write("TOTAL DE MATERIAL"+material+"en $ : "+str(total_material)+"\n")
+            archivoA.write("\n" )
+            contador23=contador23+1
+        
+        archivoA.write("COMPRAS TOTALES : "+str(sum(compras_totales))+"\n")
+        archivoA.write("\n" )
+        
+
+        # semestre 2
+        archivoA.write("SEGUNDO SEMESTRE:"+"\n")
+        archivoA.write("\n" )
+        for material in lista_nombre_material:
+            
+            archivoA.write("MATERIAL "+material+" :"+"\n" )
+            archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
+            inventarioFinal=int(input(f"Dime el inventario Final {material} :  "))
+
+            archivoA.write("Inventario Final: "+str(inventarioFinal)+"\n")
+            total_materiales=(listaMateriales[contador23]+inventarioFinal)
+            archivoA.write("Total de Materiales: "+str(total_materiales)+"\n")
+
+            inventarioInicial=(listareu[contador24])
+            contador24=contador24+1
+            archivoA.write("Inventario Inicial: "+str(inventarioInicial)+"\n")
+
+            material_comprar=(total_materiales-inventarioInicial)
+            archivoA.write("Material a Comprar : "+str(material_comprar)+"\n")
+
+            precio_compra=int(input(f"Dime el precio de compra {material} : "))
+            archivoA.write("Precio de Compra : "+str(precio_compra)+"\n")
+
+            total_material=(material_comprar*precio_compra)
+            compras_totales.append(total_material)
+            archivoA.write("TOTAL DE MATERIA "+material+" en $ : "+str(total_material)+"\n")
+            archivoA.write("\n" )
+            contador23=contador23+1
+        
+        archivoA.write("COMPRAS TOTALES : "+str(sum(compras_totales[3::1]))+"\n")
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n" )
+        archivoA.close()
+
+    
 
         
+      
 
 
 except:
