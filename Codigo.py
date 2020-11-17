@@ -255,7 +255,7 @@ try:
         print(separador)
 
         
-
+        #SEMESTRE 1
         for producto in listanombreproduc:
             archivoA.write("\n" )
             archivoA.write(producto+":"+"\n" )
@@ -294,6 +294,7 @@ try:
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
 
+        #SEMESTRE 2
         contador25=1
         contador14=0
         contador15=0
