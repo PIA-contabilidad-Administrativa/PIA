@@ -323,9 +323,43 @@ try:
                 contador16=contador16+1
                 contador17=contador17+1
             contador25=contador25+2
-                
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+
+        archivoA.write("TOTAL DE REQUERIMIENTOS:" +"\n" )
+        archivoA.write("\n" )
+        materialA1=sum(listamat1[0::3])
+        materialB1=sum(listamat1[1::3])
+        materialC1=sum(listamat1[2::3])
+
+        materialA2=sum(listamat2[0::3])
+        materialB2=sum(listamat2[1::3])
+        materialC2=sum(listamat2[2::3])
+        archivoA.write("PRIMER SEMESTRE :" +"\n" )
+        
+        archivoA.write("MATERIAL A  :" +str(materialA1)+"\n" )
+        archivoA.write("MATERIAL B  :" +str(materialB1)+"\n" )
+        archivoA.write("MATERIAL C  :" +str(materialC1)+"\n" )
+        archivoA.write("\n" )
+
+        archivoA.write("SEGUNDO SEMESTRE :" +"\n" )
+        archivoA.write("MATERIAL A  :" +str(materialA2)+"\n" )
+        archivoA.write("MATERIAL B  :" +str(materialB2)+"\n" )
+        archivoA.write("MATERIAL C  :" +str(materialC2)+"\n" )
+        archivoA.write("\n" )
+
+        archivoA.write("FINALES :" +"\n" )
+        materialAT=(materialA1+materialA2)
+        materialBT=(materialB1+materialB2)
+        materialCT=(materialC1+materialC2)
+
+        archivoA.write("MATERIAL TOTAL A :" +str(materialAT)+"\n" )
+        archivoA.write("MATERIAL TOTAL B  :" +str(materialBT)+"\n" )
+        archivoA.write("MATERIAL TOTAL C  :" +str(materialCT)+"\n" )
+
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n" )
         archivoA.close()
+    # FIN TABLA 4
 
 
 
