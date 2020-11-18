@@ -24,7 +24,10 @@ lista_total_total_materiales=[]
 listamat1=[]
 listamat2=[]
 compras_totales=[]
+lista8_1=[]
+lista8_2=[]
 listareu=[]
+listanom8=[]
 contadorp=1
 contadoru=0
 contador3=0
@@ -49,6 +52,7 @@ contador21=0
 contador22=1
 contador23=0
 contador24=0
+contador26=0
 primer="Primer Semestre"
 segundo="Segundo Semestre"
 try:
@@ -462,101 +466,219 @@ try:
         archivoA.write("\n" )
         archivoA.close()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #tabla 8 de aqui pa abajo 
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"Presupuesto de Gastos Indirectos de Fabricacion" +"-"*15 +"\n" )
+        archivoA.write("\n" )
+        archivoA.write("PRIMER SEMESTRE:"+"\n")
+        archivoA.write("\n" )
+        print("")
+        depreciacion=int(input("Dime tu Depreciacion Total : "))
+        divdep=(depreciacion/2)
+        lista8_1.append(divdep)
+        lista8_2.append(divdep)
+        archivoA.write("Depreciacion : "+str(divdep) +"\n" )
+
+
+        seguro=int(input("Dime tu Seguro Total : "))
+        divseg=(seguro/2)
+        lista8_1.append(divseg)
+        lista8_2.append(divseg)
+
+        archivoA.write("Seguro : "+str(divseg) +"\n" )
+        print(separador)
+        verdad=input("Tu mantenimiento se divide en partes iguales semestrales: ")
+
+        if verdad=="si" or verdad=="SI" or verdad=="Si" or verdad=="sI":
+            print("")
+            mantenimiento=int(input("Dime tu Manteniminieto Total : "))
+            divmant=(mantenimiento/2)
+            lista8_1.append(divmant)
+            lista8_2.append(divmant)
+            archivoA.write("Mantenimiento: "+str(divmant) +"\n" )
+        
+        else:
+            print("")
+            mantenimiento1=int(input("Dime tu Mantenimiento Del Primer Semestre : "))
+            lista8_1.append(mantenimiento1)
+            archivoA.write("Mantenimiento: "+str(mantenimiento1) +"\n" )
+
+            mantenimiento2=int(input("Dime tu Mantenimiento Del Segundo Semestre : "))
+            lista8_2.append(mantenimiento2)
+            print(separador)
+        print("")
+        verdad=input("Tu Energetico se divide en partes iguales semestrales: ")
+        if verdad=="si" or verdad=="SI" or verdad=="Si" or verdad=="sI":
+            energetico=int(input("Dime tu Energetico Total : "))
+            divener=(energetico/2)
+            lista8_1.append(divener)
+            lista8_2.append(divener)
+            archivoA.write("Energetico: "+str(divener) +"\n" )
+        
+        else:
+            print("")
+            energetico1=int(input("Dime tu Energetico Del Primer Semestre : "))
+            lista8_1.append(energetico1)
+            archivoA.write("Energetico : "+str(energetico1) +"\n" )
+
+            energetico2=int(input("Dime tu Energetico Del Segundo Semestre : "))
+            lista8_2.append(energetico2)
+            print(separador)
+        print("")
+        varios=int(input("Dime tu Varios Total : "))
+        divva=(varios/2)
+        lista8_1.append(divva)
+        lista8_2.append(divva)
+        archivoA.write("Varios : "+str(divva) +"\n" )
+
+        totalGIF=(sum(lista8_1))
+        archivoA.write("TOTAL GIF DEL SEMESTRE 1 : "+str(totalGIF) +"\n" )
+
+        archivoA.write("\n" )
+        archivoA.write("SEGUNDO SEMESTRE:"+"\n")
+        archivoA.write("\n" )
+        
+        listanom8=["Depreciacion: ","Seguro: ","Mantenimiento: ","Energetico: ","Varios: "]
+
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+        contador26=contador26+1
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+        contador26=contador26+1
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+        contador26=contador26+1
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+        contador26=contador26+1
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+
+        totalGIF2=(sum(lista8_2))
+        archivoA.write("TOTAL GIF DEL SEMESTRE 2 : "+str(totalGIF2) +"\n" )
+
+        archivoA.write("\n" )
+        TOTALGIF=(totalGIF+totalGIF2)
+        archivoA.write("\n" )
+
+        archivoA.write("Coeficiente para determinar el costo por hora de Gastos Indirectos de Fabricacion"+"\n" )
+        archivoA.write("TOTAL GIF "+str(año2)+" :"+str(TOTALGIF) +"\n" )
+        archivoA.write("Total horas M.O.D. Anual:"+"AQUI VA LO DE LUIS"+"\n" )#luis
+        archivoA.write("(=) Costo por Hora de G.I.F.:"+"\n" )#luis
+
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+
+
+
+
     
 
         
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#tabla 8 de aqui pa abajo 
-
-
 
 
 
