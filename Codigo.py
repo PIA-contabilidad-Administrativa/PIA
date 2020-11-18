@@ -387,11 +387,11 @@ try:
         for material in lista_nombre_material:
             archivoA.write("PRIMER SEMESTRE:"+"\n")
             print("PRIMER SEMESTRE : ")
+            print("")
             archivoA.write("\n" )
             archivoA.write("MATERIAL "+material+" :"+"\n" )
             archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
             inventarioFinal=int(input(f"Dime el inventario Final {material} :  "))
-            print(separador)
             listareu.append(inventarioFinal)
 
             archivoA.write("Inventario Final: "+str(inventarioFinal)+"\n")
@@ -399,7 +399,6 @@ try:
             archivoA.write("Total de Materiales: "+str(total_materiales)+"\n")
 
             inventarioInicial=int(input(f"Dime el inventario Inicial {material} :"))
-            print(separador)
             archivoA.write("Inventario Inicial: "+str(inventarioInicial)+"\n")
 
             material_comprar=(total_materiales-inventarioInicial)
@@ -426,11 +425,12 @@ try:
         for material in lista_nombre_material:
             archivoA.write("SEGUNDO SEMESTRE:"+"\n")
             print("SEGUNDO SEMESTRE : ")
+            print("")
             archivoA.write("\n" )
             
             archivoA.write("MATERIAL "+material+" :"+"\n" )
             archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
-            print(separador)
+            
             inventarioFinal=int(input(f"Dime el inventario Final {material} :  "))
 
             archivoA.write("Inventario Final: "+str(inventarioFinal)+"\n")
