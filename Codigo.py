@@ -387,6 +387,7 @@ try:
         for material in lista_nombre_material:
             archivoA.write("PRIMER SEMESTRE:"+"\n")
             print("PRIMER SEMESTRE : ")
+            archivoA.write("\n" )
             archivoA.write("MATERIAL "+material+" :"+"\n" )
             archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
             inventarioFinal=int(input(f"Dime el inventario Final {material} :  "))
@@ -414,7 +415,7 @@ try:
             archivoA.write("\n" )
             contador23=contador23+1
         
-        archivoA.write("COMPRAS TOTALES : "+str(sum(compras_totales))+"\n")
+        archivoA.write("COMPRAS TOTALES DEL PRIMER SEMESTRE : "+str(sum(compras_totales))+"\n")
         archivoA.write("\n" )
         
 
@@ -425,6 +426,7 @@ try:
         for material in lista_nombre_material:
             archivoA.write("SEGUNDO SEMESTRE:"+"\n")
             print("SEGUNDO SEMESTRE : ")
+            archivoA.write("\n" )
             
             archivoA.write("MATERIAL "+material+" :"+"\n" )
             archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
@@ -452,7 +454,7 @@ try:
             archivoA.write("\n" )
             contador23=contador23+1
         
-        archivoA.write("COMPRAS TOTALES : "+str(sum(compras_totales[3::1]))+"\n")
+        archivoA.write("COMPRAS TOTALES DEL SEGUNDO SEMESTRE : "+str(sum(compras_totales[3::1]))+"\n")
         archivoA.write("\n" )
         # ESTO ES LO QUE USARAS LUIS LA LISTA QUE SE LLAMA  compras_totales que es igual:  $2,141,010 
         archivoA.write(" TOTAL "+str(año2)+" : "+str(sum(compras_totales))+"\n")
