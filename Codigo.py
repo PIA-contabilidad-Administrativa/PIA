@@ -468,7 +468,19 @@ try:
         archivoA.write("\n" )
         archivoA.close()
 
-
+        #TABLA 6
+        saldo_proveedores= float(input(f"Dime el saldo de los proveedores {año} :  "))
+        compras_totales_suma=sum(compras_totales)
+        total_proveedores= (saldo_proveedores+ (compras_totales_suma))
+        
+        porcentaje_1= float(input(f"Cuanto porcentaje del Total  de proveedores deseas aplicar {año2}; ejemplo(.30): "))
+        por_proveedores= (compras_totales_suma*porcentaje_1)
+        
+        total_salidas= (saldo_proveedores + por_proveedores)
+        
+        saldo_proveedores_totales= (total_proveedores - total_salidas)
+        
+        print(f"El saldo de provedores del año {año2} es de {saldo_proveedores_totales}")
         
 
 
