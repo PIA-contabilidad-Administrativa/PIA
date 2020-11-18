@@ -17,6 +17,17 @@ lista_total_unidades1=[]
 lista_total_unidades2=[]
 lista_unidad_producir=[]
 lista_suma_camisas_producir=[]
+lista_nombre_material=[]
+lista_total_materiales=[]
+lista_req=[]
+lista_total_total_materiales=[]
+listamat1=[]
+listamat2=[]
+compras_totales=[]
+lista8_1=[]
+lista8_2=[]
+listareu=[]
+listanom8=[]
 contadorp=1
 contadoru=0
 contador3=0
@@ -27,6 +38,21 @@ contador7=0
 contador8=0
 contador9=0
 contador10=0
+contador11=0
+contador12=0
+contador13=0
+contador14=0
+contador15=0
+contador16=0
+contador17=0
+contador18=0
+contador19=0
+contador20=0
+contador21=0
+contador22=1
+contador23=0
+contador24=0
+contador26=0
 primer="Primer Semestre"
 segundo="Segundo Semestre"
 try:
@@ -215,7 +241,450 @@ try:
             contador10=contador10+1
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
+
+        #TABLA 4
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("\n" )
+        archivoA.write("-"*15+"PRESUPUESTO DE REQUERIMIENTO DE MATERIALES" +"-"*15 +"\n" )
+
+        x=lista_unidad_producir[contador12]
+        contador12=contador12+1
+        y=lista_unidad_producir[contador12]
+        suma=(x+y)
+
+        cuantos=int(input("Cuantos materiales tienes :"))
+        for material in range(cuantos):
+            material=input("Dime el nombre del material : ")
+            lista_nombre_material.append(material)
+        print(separador)
+
         
+        #SEMESTRE 1
+        for producto in listanombreproduc:
+            archivoA.write("\n" )
+            archivoA.write(producto+":"+"\n" )
+            archivoA.write("PRIMER SEMESTRE:"+"\n" )
+            archivoA.write("\n" )
+            archivoA.write("Unidades a producir:"+str(lista_unidad_producir[contador21])+"\n" )
+            archivoA.write("\n" )
+            contador13=0
+            contador16=0
+            for material in lista_nombre_material:
+                
+                archivoA.write("MATERIAL "+str(lista_nombre_material[contador13])+":"+"\n" )
+                
+
+                for req in range(1):
+                    print(producto)
+                    print("")
+                    requerimientoM=float(input(f"Dime el requerimiento de Material {material}: "))
+                    lista_req.append(requerimientoM)
+                print(separador)
+                
+                x=(lista_unidad_producir[contador21]*lista_req[contador15])
+                lista_total_materiales.append(x)
+                archivoA.write("Requerimiento de material:"+str(lista_req[contador14])+"\n" )
+                archivoA.write("TOTAL DE MATERIAL "+str(lista_nombre_material[contador16])+":"+str(lista_total_materiales[contador17])+"\n" )
+                archivoA.write("\n" )
+                listamat1.append(x)
+               
+                contador13=contador13+1
+                contador14=contador14+1
+                contador15=contador15+1
+                contador16=contador16+1
+                contador17=contador17+1
+            contador21=contador21+2
+                
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.close()
+
+        #SEMESTRE 2
+        contador25=1
+        contador14=0
+        contador15=0
+        contador17=0
+        lista_total_materiales=[]
+        archivoA=open("./respuestas.txt" , 'a')
+        for producto in listanombreproduc:
+            archivoA.write("\n" )
+            archivoA.write(producto+":"+"\n" )
+            archivoA.write("SEGUNDO SEMESTRE:"+"\n" )
+            archivoA.write("\n" )
+            archivoA.write("Unidades a producir:"+str(lista_unidad_producir[contador25])+"\n" )
+            archivoA.write("\n" )
+            contador13=0
+            contador16=0
+            for material in lista_nombre_material:
+                
+                archivoA.write("MATERIAL "+str(lista_nombre_material[contador13])+":"+"\n" )
+                
+                
+                x=(lista_unidad_producir[contador25]*lista_req[contador15])
+                lista_total_materiales.append(x)
+                archivoA.write("Requerimiento de material:"+str(lista_req[contador14])+"\n" )
+                archivoA.write("TOTAL DE MATERIAL "+str(lista_nombre_material[contador16])+":"+str(lista_total_materiales[contador17])+"\n" )
+                archivoA.write("\n" )
+                listamat2.append(x)
+               
+                contador13=contador13+1
+                contador14=contador14+1
+                contador15=contador15+1
+                contador16=contador16+1
+                contador17=contador17+1
+            contador25=contador25+2
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+
+        archivoA.write("TOTAL DE REQUERIMIENTOS:" +"\n" )
+        archivoA.write("\n" )
+        listaMateriales=[]
+        materialA1=sum(listamat1[0::3])
+        listaMateriales.append(materialA1)
+
+        materialB1=sum(listamat1[1::3])
+        listaMateriales.append(materialB1)
+
+        materialC1=sum(listamat1[2::3])
+        listaMateriales.append(materialC1)
+
+        materialA2=sum(listamat2[0::3])
+        listaMateriales.append(materialA2)
+
+        materialB2=sum(listamat2[1::3])
+        listaMateriales.append(materialB2)
+
+        materialC2=sum(listamat2[2::3])
+        listaMateriales.append(materialC2)
+
+        archivoA.write("PRIMER SEMESTRE :" +"\n" )
+        
+        archivoA.write("MATERIAL A  :" +str(materialA1)+"\n" )
+        archivoA.write("MATERIAL B  :" +str(materialB1)+"\n" )
+        archivoA.write("MATERIAL C  :" +str(materialC1)+"\n" )
+        archivoA.write("\n" )
+
+        archivoA.write("SEGUNDO SEMESTRE :" +"\n" )
+        archivoA.write("MATERIAL A  :" +str(materialA2)+"\n" )
+        archivoA.write("MATERIAL B  :" +str(materialB2)+"\n" )
+        archivoA.write("MATERIAL C  :" +str(materialC2)+"\n" )
+        archivoA.write("\n" )
+
+        archivoA.write("FINALES :" +"\n" )
+        materialAT=(materialA1+materialA2)
+        materialBT=(materialB1+materialB2)
+        materialCT=(materialC1+materialC2)
+
+        archivoA.write("MATERIAL TOTAL A :" +str(materialAT)+"\n" )
+        archivoA.write("MATERIAL TOTAL B  :" +str(materialBT)+"\n" )
+        archivoA.write("MATERIAL TOTAL C  :" +str(materialCT)+"\n" )
+
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n" )
+        archivoA.close()
+    # FIN TABLA 4
+
+        #TABLA 5 
+        #semestre 1
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"PRESUPUESTO DE COMPRAS DE MATERIALES" +"-"*15 +"\n" )
+        archivoA.write("\n" )
+        print("")
+        for material in lista_nombre_material:
+            archivoA.write("PRIMER SEMESTRE:"+"\n")
+            print("PRIMER SEMESTRE : ")
+            print("")
+            archivoA.write("\n" )
+            archivoA.write("MATERIAL "+material+" :"+"\n" )
+            archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
+            inventarioFinal=int(input(f"Dime el inventario Final {material} :  "))
+            listareu.append(inventarioFinal)
+
+            archivoA.write("Inventario Final: "+str(inventarioFinal)+"\n")
+            total_materiales=(listaMateriales[contador23]+inventarioFinal)
+            archivoA.write("Total de Materiales: "+str(total_materiales)+"\n")
+
+            inventarioInicial=int(input(f"Dime el inventario Inicial {material} :"))
+            archivoA.write("Inventario Inicial: "+str(inventarioInicial)+"\n")
+
+            material_comprar=(total_materiales-inventarioInicial)
+            archivoA.write("Material a Comprar : "+str(material_comprar)+"\n")
+
+            precio_compra=int(input(f"Dime el precio de compra {material} : "))
+            print(separador)
+            archivoA.write("Precio de Compra : "+str(precio_compra)+"\n")
+
+            total_material=(material_comprar * precio_compra)
+            compras_totales.append(total_material)
+            archivoA.write("TOTAL DE MATERIAL "+material+" en $ : "+str(total_material)+"\n")
+            archivoA.write("\n" )
+            contador23=contador23+1
+        
+        archivoA.write("COMPRAS TOTALES DEL PRIMER SEMESTRE : "+str(sum(compras_totales))+"\n")
+        archivoA.write("\n" )
+        
+
+        # semestre 2
+        
+        archivoA.write("\n" )
+        print("")
+        for material in lista_nombre_material:
+            archivoA.write("SEGUNDO SEMESTRE:"+"\n")
+            print("SEGUNDO SEMESTRE : ")
+            print("")
+            archivoA.write("\n" )
+            
+            archivoA.write("MATERIAL "+material+" :"+"\n" )
+            archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
+            
+            inventarioFinal=int(input(f"Dime el inventario Final {material} :  "))
+
+            archivoA.write("Inventario Final: "+str(inventarioFinal)+"\n")
+            total_materiales=(listaMateriales[contador23]+inventarioFinal)
+            archivoA.write("Total de Materiales: "+str(total_materiales)+"\n")
+
+            inventarioInicial=(listareu[contador24])
+            contador24=contador24+1
+            archivoA.write("Inventario Inicial: "+str(inventarioInicial)+"\n")
+
+            material_comprar=(total_materiales-inventarioInicial)
+            archivoA.write("Material a Comprar : "+str(material_comprar)+"\n")
+
+            precio_compra=int(input(f"Dime el precio de compra {material} : "))
+            print(separador)
+            archivoA.write("Precio de Compra : "+str(precio_compra)+"\n")
+
+            total_material=(material_comprar*precio_compra)
+            compras_totales.append(total_material)
+            archivoA.write("TOTAL DE MATERIA "+material+" en $ : "+str(total_material)+"\n")
+            archivoA.write("\n" )
+            contador23=contador23+1
+        
+        archivoA.write("COMPRAS TOTALES DEL SEGUNDO SEMESTRE : "+str(sum(compras_totales[3::1]))+"\n")
+        archivoA.write("\n" )
+        # ESTO ES LO QUE USARAS LUIS LA LISTA QUE SE LLAMA  compras_totales que es igual:  $2,141,010 
+        archivoA.write(" TOTAL "+str(año2)+" : "+str(sum(compras_totales))+"\n")
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n" )
+        archivoA.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #tabla 8 de aqui pa abajo 
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"Presupuesto de Gastos Indirectos de Fabricacion" +"-"*15 +"\n" )
+        archivoA.write("\n" )
+        archivoA.write("PRIMER SEMESTRE:"+"\n")
+        archivoA.write("\n" )
+        print("")
+        depreciacion=int(input("Dime tu Depreciacion Total : "))
+        divdep=(depreciacion/2)
+        lista8_1.append(divdep)
+        lista8_2.append(divdep)
+        archivoA.write("Depreciacion : "+str(divdep) +"\n" )
+
+
+        seguro=int(input("Dime tu Seguro Total : "))
+        divseg=(seguro/2)
+        lista8_1.append(divseg)
+        lista8_2.append(divseg)
+
+        archivoA.write("Seguro : "+str(divseg) +"\n" )
+        print(separador)
+        verdad=input("Tu mantenimiento se divide en partes iguales semestrales: ")
+
+        if verdad=="si" or verdad=="SI" or verdad=="Si" or verdad=="sI":
+            print("")
+            mantenimiento=int(input("Dime tu Manteniminieto Total : "))
+            divmant=(mantenimiento/2)
+            lista8_1.append(divmant)
+            lista8_2.append(divmant)
+            archivoA.write("Mantenimiento: "+str(divmant) +"\n" )
+        
+        else:
+            print("")
+            mantenimiento1=int(input("Dime tu Mantenimiento Del Primer Semestre : "))
+            lista8_1.append(mantenimiento1)
+            archivoA.write("Mantenimiento: "+str(mantenimiento1) +"\n" )
+
+            mantenimiento2=int(input("Dime tu Mantenimiento Del Segundo Semestre : "))
+            lista8_2.append(mantenimiento2)
+            print(separador)
+        print("")
+        verdad=input("Tu Energetico se divide en partes iguales semestrales: ")
+        if verdad=="si" or verdad=="SI" or verdad=="Si" or verdad=="sI":
+            energetico=int(input("Dime tu Energetico Total : "))
+            divener=(energetico/2)
+            lista8_1.append(divener)
+            lista8_2.append(divener)
+            archivoA.write("Energetico: "+str(divener) +"\n" )
+        
+        else:
+            print("")
+            energetico1=int(input("Dime tu Energetico Del Primer Semestre : "))
+            lista8_1.append(energetico1)
+            archivoA.write("Energetico : "+str(energetico1) +"\n" )
+
+            energetico2=int(input("Dime tu Energetico Del Segundo Semestre : "))
+            lista8_2.append(energetico2)
+            print(separador)
+        print("")
+        varios=int(input("Dime tu Varios Total : "))
+        divva=(varios/2)
+        lista8_1.append(divva)
+        lista8_2.append(divva)
+        archivoA.write("Varios : "+str(divva) +"\n" )
+
+        totalGIF=(sum(lista8_1))
+        archivoA.write("TOTAL GIF DEL SEMESTRE 1 : "+str(totalGIF) +"\n" )
+
+        archivoA.write("\n" )
+        archivoA.write("SEGUNDO SEMESTRE:"+"\n")
+        archivoA.write("\n" )
+        
+        listanom8=["Depreciacion: ","Seguro: ","Mantenimiento: ","Energetico: ","Varios: "]
+
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+        contador26=contador26+1
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+        contador26=contador26+1
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+        contador26=contador26+1
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+        contador26=contador26+1
+
+        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
+
+        totalGIF2=(sum(lista8_2))
+        archivoA.write("TOTAL GIF DEL SEMESTRE 2 : "+str(totalGIF2) +"\n" )
+
+        archivoA.write("\n" )
+        TOTALGIF=(totalGIF+totalGIF2)
+        archivoA.write("\n" )
+
+        archivoA.write("Coeficiente para determinar el costo por hora de Gastos Indirectos de Fabricacion"+"\n" )
+        archivoA.write("TOTAL GIF "+str(año2)+" :"+str(TOTALGIF) +"\n" )
+        archivoA.write("Total horas M.O.D. Anual:"+"AQUI VA LO DE LUIS"+"\n" )#luis
+        archivoA.write("(=) Costo por Hora de G.I.F.:"+"\n" )#luis
+
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+
+
+
+
+    
+
+        
+
+
+
+
+
+
 
 
 except:
