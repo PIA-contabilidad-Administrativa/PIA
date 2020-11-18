@@ -53,6 +53,7 @@ contador22=1
 contador23=0
 contador24=0
 contador26=0
+contadorespecial=0
 primer="Primer Semestre"
 segundo="Segundo Semestre"
 try:
@@ -214,7 +215,8 @@ try:
             archivoA.write("Total de unidades : "+str(total_unidades2)+"\n" )
             
 
-            inv_inicial_2= float(input(f"Dime el inventario inicial de {listanombreproduc[contador5]} del segundo semestre: "))
+            inv_inicial_2=(lista_invfinal1[contadorespecial])
+            contadorespecial=contadorespecial+1
             lista_invinicial2.append(inv_inicial_2)
             archivoA.write("Inventario inicial : "+str(inv_inicial_2)+"\n" )
             print(separador)
