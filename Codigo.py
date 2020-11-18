@@ -383,11 +383,10 @@ try:
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("-"*15+"PRESUPUESTO DE COMPRAS DE MATERIALES" +"-"*15 +"\n" )
         archivoA.write("\n" )
-        archivoA.write("PRIMER SEMESTRE:"+"\n")
-        print("PRIMER SEMESTRE : ")
         print("")
         for material in lista_nombre_material:
-
+            archivoA.write("PRIMER SEMESTRE:"+"\n")
+            print("PRIMER SEMESTRE : ")
             archivoA.write("MATERIAL "+material+" :"+"\n" )
             archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
             inventarioFinal=int(input(f"Dime el inventario Final {material} :  "))
@@ -411,7 +410,7 @@ try:
 
             total_material=(material_comprar * precio_compra)
             compras_totales.append(total_material)
-            archivoA.write("TOTAL DE MATERIAL"+material+"en $ : "+str(total_material)+"\n")
+            archivoA.write("TOTAL DE MATERIAL "+material+" en $ : "+str(total_material)+"\n")
             archivoA.write("\n" )
             contador23=contador23+1
         
@@ -420,11 +419,12 @@ try:
         
 
         # semestre 2
-        archivoA.write("SEGUNDO SEMESTRE:"+"\n")
+        
         archivoA.write("\n" )
-        print("SEGUNDO SEMESTRE : ")
         print("")
         for material in lista_nombre_material:
+            archivoA.write("SEGUNDO SEMESTRE:"+"\n")
+            print("SEGUNDO SEMESTRE : ")
             
             archivoA.write("MATERIAL "+material+" :"+"\n" )
             archivoA.write("Requerimiento de Materiales: "+str(listaMateriales[contador23])+"\n")
