@@ -91,7 +91,7 @@ try:
             
             contadoru=contadoru+1
         archivoA=open("./respuestas.txt" , 'a')
-        archivoA.write("-"*15+"Respuestas del Presupuesto de Ventas"+"-"*15 +"\n" )
+        archivoA.write("-"*15+"1-Respuestas del Presupuesto de Ventas"+"-"*15 +"\n" )
         archivoA.write("\n" )
         archivoA.write("-"*30 +"\n" )
 
@@ -150,7 +150,7 @@ try:
         SALDODECLIENTES=(totalCliente-totalEntradas)
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("\n" )
-        archivoA.write("-"*15+"Determinacion de saldo de clientes y flujo de entradas"+"-"*15 +"\n" )
+        archivoA.write("-"*15+"2-Determinacion de saldo de clientes y flujo de entradas"+"-"*15 +"\n" )
         print("")
         archivoA.write("Saldo de Clientes "+str(año)+": "+str(saldoCliente)+"\n" )
 
@@ -178,7 +178,7 @@ try:
         #PRESUPUESTO DE PRODUCCION
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("\n" )
-        archivoA.write("-"*15+"PRESUPUESTO DE PRODUCCION"+"-"*15 +"\n" )
+        archivoA.write("-"*15+"3-PRESUPUESTO DE PRODUCCION"+"-"*15 +"\n" )
         for producto in listanombreproduc:
             archivoA.write("\n" )
             archivoA.write("PRIMER SEMESTRE :"+"\n" )
@@ -247,7 +247,7 @@ try:
         #TABLA 4
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("\n" )
-        archivoA.write("-"*15+"PRESUPUESTO DE REQUERIMIENTO DE MATERIALES" +"-"*15 +"\n" )
+        archivoA.write("-"*15+"4-PRESUPUESTO DE REQUERIMIENTO DE MATERIALES" +"-"*15 +"\n" )
 
         x=lista_unidad_producir[contador12]
         contador12=contador12+1
@@ -387,7 +387,7 @@ try:
         #TABLA 5 
         #semestre 1
         archivoA=open("./respuestas.txt" , 'a')
-        archivoA.write("-"*15+"PRESUPUESTO DE COMPRAS DE MATERIALES" +"-"*15 +"\n" )
+        archivoA.write("-"*15+"5-PRESUPUESTO DE COMPRAS DE MATERIALES" +"-"*15 +"\n" )
         archivoA.write("\n" )
         print("")
         for material in lista_nombre_material:
@@ -469,18 +469,35 @@ try:
         archivoA.close()
 
         #TABLA 6
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"6-Determinacion del saldo de Proveedores y Flujo de Salidas" +"-"*15 +"\n" )
+        archivoA.write("\n" )
+        print("")
         saldo_proveedores= float(input(f"Dime el saldo de los proveedores {año} :  "))
+        archivoA.write("Saldo de los proveedores "+str(año)+" : "+str(saldo_proveedores)+"\n")
         compras_totales_suma=sum(compras_totales)
+        archivoA.write("Compras totales "+str(año2)+" : "+str(compras_totales_suma)+"\n")
         total_proveedores= (saldo_proveedores+ (compras_totales_suma))
-        
+        archivoA.write("Total de Proveedores "+str(año2)+" : "+str(total_proveedores)+"\n")
+        archivoA.write("\n" )
+        archivoA.write("Salidas de Efectivo :"+"\n" )
         porcentaje_1= float(input(f"Cuanto porcentaje del Total  de proveedores deseas aplicar {año2}; ejemplo(.30): "))
         por_proveedores= (compras_totales_suma*porcentaje_1)
+        archivoA.write("Por provedores del "+str(año)+" : "+str(saldo_proveedores)+"\n" )
+        archivoA.write("Por provedores del "+str(año2)+" : "+str(por_proveedores)+"\n" )
         
         total_salidas= (saldo_proveedores + por_proveedores)
+        archivoA.write("Total de Salidas "+str(año2)+" : "+str(total_salidas)+"\n" )
         
         saldo_proveedores_totales= (total_proveedores - total_salidas)
+        archivoA.write("\n" )
+        archivoA.write("Saldo de Proveedores del "+str(año2)+" : "+str(saldo_proveedores_totales)+"\n" )
+        archivoA.write("\n" )
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n" )
+        archivoA.close()
         
-        print(f"El saldo de provedores del año {año2} es de {saldo_proveedores_totales}")
+    
         
 
 
@@ -584,7 +601,7 @@ try:
 
         #tabla 8 de aqui pa abajo 
         archivoA=open("./respuestas.txt" , 'a')
-        archivoA.write("-"*15+"Presupuesto de Gastos Indirectos de Fabricacion" +"-"*15 +"\n" )
+        archivoA.write("-"*15+"8-Presupuesto de Gastos Indirectos de Fabricacion" +"-"*15 +"\n" )
         archivoA.write("\n" )
         archivoA.write("PRIMER SEMESTRE:"+"\n")
         archivoA.write("\n" )
