@@ -1,5 +1,6 @@
 import sys
 import datetime
+import math
 
 separador=("*"*50)
 menu=1
@@ -745,7 +746,9 @@ try:
         archivoA.write("\n" )
         archivoA.write("TOTAL GIF "+str(año2)+" $: "+str(TOTALGIF) +"\n" )
         archivoA.write("Total horas M.O.D. Anual:"+str(T_H_Requeridas)+"\n" )
-        costoH_GIF=(TOTALGIF/T_H_Requeridas)
+        x=(TOTALGIF/T_H_Requeridas)
+        z=math.round(x)
+        costoH_GIF=(z)
         archivoA.write("(=) Costo por Hora de G.I.F. "+"$ : "+str(costoH_GIF)+"\n" )
 
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
