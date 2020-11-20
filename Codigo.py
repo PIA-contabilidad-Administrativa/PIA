@@ -857,8 +857,6 @@ try:
 
 
 
-
-
 except:
     print("Intenta respetar lo que se te pide :)")
 
