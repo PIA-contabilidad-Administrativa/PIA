@@ -567,7 +567,10 @@ try:
 
         print(f"El total de M.O.D  por semestre es de {Total_MOD1 + Total_MOD2}")
 
-
+        #AQUI TE DEJO LAS 2 VARIABLES FINALES
+        T_H_Requeridas= T_horas_semestre_1 + T_horas_semestre_2
+        #ESTA DE ABAJO ES LA QUE ME PEDIAS, LA DE 1,350,900 DANY
+        T_MOD_porSemestre= Total_MOD1+Total_MOD2
 
 
 
