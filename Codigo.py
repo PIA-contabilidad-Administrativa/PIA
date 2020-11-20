@@ -775,7 +775,7 @@ try:
 
         archivoA.write("Saldos y Salarios : "+str(divsue) +"\n" )
         
-        comision=float(input("Dime la Comision de Ventas Proyectadas (0.01) : "))
+        comision=float(input("Dime la Comision de Ventas Proyectadas (0.001) : "))
 
         resultadoco1=(totalventasS1*comision)
         resultadoco2=(totalventasS2*comision)
@@ -783,7 +783,7 @@ try:
         lista9_2.append(resultadoco2)
 
         archivoA.write("Comisiones : "+str(resultadoco1) +"\n" )
-
+        print("")
         verdad=input("Tus varios se divide en partes iguales semestrales: ")
         if verdad=="si" or verdad=="SI" or verdad=="Si" or verdad=="sI":
             print("")
@@ -797,7 +797,7 @@ try:
             print("")
             vario1=int(input("Dime tu Vario Del Primer Semestre : "))
             lista9_1.append(vario1)
-            archivoA.write("Mantenimiento: "+str(vario1) +"\n" )
+            archivoA.write("Varios: "+str(vario1) +"\n" )
 
             vario2=int(input("Dime tu Vario Del Segundo Semestre : "))
             lista9_2.append(vario2)
@@ -841,25 +841,7 @@ try:
         print(separador)
         print("")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # YO HAGO LA TABLA 9 BRO Y LA 10 LA HACEMOS JUNTOS 
-        
+    
         #tabla 10
         #listapreciocompra  precio compra 
         #lista_req requerimiento de material 
