@@ -71,13 +71,17 @@ try:
         #Preguntar datos y agregar a variables
         año=int(input("Dime el año 1 : "))
         año2=int(input("Dime el año 2: "))
+        print(separador)
         productocon=int(input("Dime cuantos productos son :"))
+        print(separador)
         for producto in range(productocon):
             nombre=input(f"Dime el nombre del Producto {contadorp} :")
             listanombreproduc.append(nombre)
             contadorp=contadorp+1
         print(separador)
         #TABLA 1
+        print("-"*15+"1-Presupuesto de Ventas"+"-"*15)
+        print("")
         for producto in listanombreproduc:
             unidadavender=int(input(f"Dime las unidades a vender de el producto {listanombreproduc[contadoru]} del {primer} : "))
             listaunidadavender.append(unidadavender)
@@ -147,6 +151,8 @@ try:
         # FINAL TABLA 1
         #TABLA 2
         print(separador)
+        print("-"*15+"2-Determinación del saldo de Clientes y Flujo de Entradas"+"-"*15)
+        print("")
         saldoCliente=float(input("Dime el saldo de Clientes del Balance General : "))
         totalCliente=(saldoCliente+VENTASTOTALES)
 
@@ -182,11 +188,17 @@ try:
 
          #TABLA 3
         #PRESUPUESTO DE PRODUCCION
+        print(separador)
+        print("-"*15+"3-Presupuesto de Producción"+"-"*15)
+
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("\n" )
         archivoA.write("-"*15+"3-PRESUPUESTO DE PRODUCCION"+"-"*15 +"\n" )
         for producto in listanombreproduc:
             archivoA.write("\n" )
+            print("")
+            print("PRIMER SEMESTRE")
+            print("")
             archivoA.write("PRIMER SEMESTRE :"+"\n" )
             archivoA.write(producto+":"+"\n")
             inv_final_1=float(input(f"Dime le inventario final de {listanombreproduc[contador5]} del primer semestre: "))
@@ -206,6 +218,8 @@ try:
             contador8=contador8+1
 
 
+            print("")
+            print("SEGUNDO SEMESTRE")
             print("")
             archivoA.write("\n" )
             archivoA.write("SEGUNDO SEMESTRE :"+"\n" )
@@ -249,10 +263,13 @@ try:
             contador10=contador10+1
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
+        print("")
+        print(separador)
 
         #TABLA 4
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("\n" )
+        print("-"*15+"4-PRESUPUESTO DE REQUERIMIENTO DE MATERIALES" +"-"*15 +"\n" )
         archivoA.write("-"*15+"4-PRESUPUESTO DE REQUERIMIENTO DE MATERIALES" +"-"*15 +"\n" )
 
         x=lista_unidad_producir[contador12]
@@ -260,7 +277,9 @@ try:
         y=lista_unidad_producir[contador12]
         suma=(x+y)
 
+        print("")
         cuantos=int(input("Cuantos materiales tienes :"))
+        print("")
         for material in range(cuantos):
             material=input("Dime el nombre del material : ")
             lista_nombre_material.append(material)
@@ -269,7 +288,9 @@ try:
         
         #SEMESTRE 1
         for producto in listanombreproduc:
+            print("")
             archivoA.write("\n" )
+            print("PRIMER SEMESTRE")
             archivoA.write(producto+":"+"\n" )
             archivoA.write("PRIMER SEMESTRE:"+"\n" )
             archivoA.write("\n" )
@@ -305,6 +326,7 @@ try:
                 
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.close()
+        print("")
 
         #SEMESTRE 2
         contador25=1
@@ -388,12 +410,15 @@ try:
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.write("\n" )
         archivoA.close()
+        print("")
+        print(separador)
     # FIN TABLA 4
 
         #TABLA 5 
         #semestre 1
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("-"*15+"5-PRESUPUESTO DE COMPRAS DE MATERIALES" +"-"*15 +"\n" )
+        print("-"*15+"5-PRESUPUESTO DE COMPRAS DE MATERIALES" +"-"*15)
         archivoA.write("\n" )
         print("")
         for material in lista_nombre_material:
@@ -431,7 +456,7 @@ try:
         
 
         # semestre 2
-        
+        listapreciocompra=[]
         archivoA.write("\n" )
         print("")
         for material in lista_nombre_material:
@@ -457,6 +482,7 @@ try:
             archivoA.write("Material a Comprar : "+str(material_comprar)+"\n")
 
             precio_compra=int(input(f"Dime el precio de compra {material} : "))
+            listapreciocompra.append(precio_compra)
             print(separador)
             archivoA.write("Precio de Compra : "+str(precio_compra)+"\n")
 
@@ -475,8 +501,11 @@ try:
         archivoA.close()
 
         #TABLA 6
+        print("")
+        print(separador)
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("-"*15+"6-Determinacion del saldo de Proveedores y Flujo de Salidas" +"-"*15 +"\n" )
+        print("-"*15+"6-Determinacion del saldo de Proveedores y Flujo de Salidas" +"-"*15)
         archivoA.write("\n" )
         print("")
         saldo_proveedores= float(input(f"Dime el saldo de los proveedores {año} :  "))
@@ -506,18 +535,19 @@ try:
         
         
         #TABLA 7
+        print("")
+        print(separador)
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("-"*15+"7-Presupuesto de Mano de Obra Directa" +"-"*15 +"\n" )
+        print("-"*15+"7-Presupuesto de Mano de Obra Directa" +"-"*15)
         archivoA.write("\n" )
         print("")
-        print("7-Presupuesto de Mano de Obra Directa")
         listaHorasReq=[]
 
         for valor in (listanombreproduc):
             print("")
             print("PRIMER SEMESTRE: ")
             archivoA.write("PRIMER SEMESTRE  :"+"\n" )
-            print("")
             print(valor+":")
             print("")
             archivoA.write(str(valor)+" : "+"\n" )
@@ -559,7 +589,6 @@ try:
             print("")
             print("SEGUNDO SEMESTRE: ")
             archivoA.write("SEGUNDO SEMESTRE  :"+"\n" )
-            print("")
             print(valor+":")
             print("")
             archivoA.write(str(valor)+" :"+"\n" )
@@ -610,10 +639,15 @@ try:
         
 
         #tabla 8 
+        print("")
+        print(separador)
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("-"*15+"8-Presupuesto de Gastos Indirectos de Fabricacion" +"-"*15 +"\n" )
+        print("-"*15+"8-Presupuesto de Gastos Indirectos de Fabricacion" +"-"*15)
+        print("")
         archivoA.write("\n" )
         archivoA.write("PRIMER SEMESTRE:"+"\n")
+        print("PRIMER SEMESTRE : ")
         archivoA.write("\n" )
         print("")
         depreciacion=int(input("Dime tu Depreciacion Total : "))
@@ -650,8 +684,10 @@ try:
             lista8_2.append(mantenimiento2)
             print(separador)
         print("")
+
         verdad=input("Tu Energetico se divide en partes iguales semestrales: ")
         if verdad=="si" or verdad=="SI" or verdad=="Si" or verdad=="sI":
+            print("")
             energetico=int(input("Dime tu Energetico Total : "))
             divener=(energetico/2)
             lista8_1.append(divener)
@@ -667,7 +703,7 @@ try:
             energetico2=int(input("Dime tu Energetico Del Segundo Semestre : "))
             lista8_2.append(energetico2)
             print(separador)
-        print("")
+
         varios=int(input("Dime tu Varios Total : "))
         divva=(varios/2)
         lista8_1.append(divva)
@@ -706,9 +742,11 @@ try:
         archivoA.write("\n" )
 
         archivoA.write("Coeficiente para determinar el costo por hora de Gastos Indirectos de Fabricacion"+"\n" )
-        archivoA.write("TOTAL GIF "+str(año2)+" :"+str(TOTALGIF) +"\n" )
-        archivoA.write("Total horas M.O.D. Anual:"+"AQUI VA LO DE LUIS"+"\n" )#luis
-        archivoA.write("(=) Costo por Hora de G.I.F.:"+"\n" )#luis
+        archivoA.write("\n" )
+        archivoA.write("TOTAL GIF "+str(año2)+" $: "+str(TOTALGIF) +"\n" )
+        archivoA.write("Total horas M.O.D. Anual:"+str(T_H_Requeridas)+"\n" )
+        costoH_GIF=(TOTALGIF/T_H_Requeridas)
+        archivoA.write("(=) Costo por Hora de G.I.F. "+"$ : "+str(costoH_GIF)+"\n" )
 
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.write("\n")
@@ -716,7 +754,14 @@ try:
 
 
 
-
+        # YO HAGO LA TABLA 9 BRO Y LA 10 LA HACEMOS JUNTOS 
+        
+        #tabla 10
+        #listapreciocompra  precio compra 
+        #lista_req requerimiento de material 
+        #listaHorasReq horas requeridas por unidad 
+        # costoH_GIF
+        #Esto es lo que ocuparemos para la tabla 10
     
 
         
