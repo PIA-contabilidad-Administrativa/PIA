@@ -738,7 +738,7 @@ try:
         archivoA.write("TOTAL GIF "+str(año2)+" $: "+str(TOTALGIF) +"\n" )
         archivoA.write("Total horas M.O.D. Anual:"+str(T_H_Requeridas)+"\n" )
         x=(TOTALGIF/T_H_Requeridas)
-        z=round(x)
+        z=round(x,2)
         costoH_GIF=(z)
         archivoA.write("(=) Costo por Hora de G.I.F. "+"$ : "+str(costoH_GIF)+"\n" )
 
@@ -775,7 +775,7 @@ try:
 
         archivoA.write("Saldos y Salarios : "+str(divsue) +"\n" )
         
-        comision=float(input("Dime la Comision de Ventas Proyectadas (.1) : "))
+        comision=float(input("Dime la Comision de Ventas Proyectadas (0.01) : "))
 
         resultadoco1=(totalventasS1*comision)
         resultadoco2=(totalventasS2*comision)
