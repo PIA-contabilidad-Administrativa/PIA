@@ -747,7 +747,7 @@ try:
         archivoA.write("TOTAL GIF "+str(año2)+" $: "+str(TOTALGIF) +"\n" )
         archivoA.write("Total horas M.O.D. Anual:"+str(T_H_Requeridas)+"\n" )
         x=(TOTALGIF/T_H_Requeridas)
-        z=math.round(x)
+        z=round(x)
         costoH_GIF=(z)
         archivoA.write("(=) Costo por Hora de G.I.F. "+"$ : "+str(costoH_GIF)+"\n" )
 
