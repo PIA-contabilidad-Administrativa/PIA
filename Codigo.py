@@ -33,6 +33,8 @@ lista_importeMOD_1=[]
 lista_total_horas_1=[]
 lista_importeMOD_2=[]
 lista_total_horas_2=[]
+lista9_1=[]
+lista9_2=[]
 contadorp=1
 contadoru=0
 contador3=0
@@ -648,7 +650,6 @@ try:
         print("")
         archivoA.write("\n" )
         archivoA.write("PRIMER SEMESTRE:"+"\n")
-        print("PRIMER SEMESTRE : ")
         archivoA.write("\n" )
         print("")
         depreciacion=int(input("Dime tu Depreciacion Total : "))
@@ -720,20 +721,10 @@ try:
         
         listanom8=["Depreciacion: ","Seguro: ","Mantenimiento: ","Energetico: ","Varios: "]
 
+        for elemento in listanom8:
+            archivoA.write(str(elemento)+" : "+str(lista8_2[contador26])+"\n")
+            contador26=contador26+1
 
-        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
-        contador26=contador26+1
-
-        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
-        contador26=contador26+1
-
-        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
-        contador26=contador26+1
-
-        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
-        contador26=contador26+1
-
-        archivoA.write(str(listanom8[contador26])+str(lista8_2[contador26])+"\n")
 
         totalGIF2=(sum(lista8_2))
         archivoA.write("TOTAL GIF DEL SEMESTRE 2 : "+str(totalGIF2) +"\n" )
@@ -754,6 +745,116 @@ try:
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.write("\n")
         archivoA.close()
+        print("")
+        print(separador)
+        print("")
+
+
+
+
+        #TABLA 9 
+        contador26=0
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"9-Presupuesto de Gastos de Operacion" +"-"*15 +"\n" )
+        print("-"*15+"9-Gastos de Administracion y Ventas:" +"-"*15)
+        print("")
+        archivoA.write("\n" )
+        archivoA.write("PRIMER SEMESTRE:"+"\n")
+        archivoA.write("\n" )
+        print("")
+        depreciacion2=int(input("Dime tu Depreciacion Total : "))
+        divdep=(depreciacion2/2)
+        lista9_1.append(divdep)
+        lista9_2.append(divdep)
+        archivoA.write("Depreciacion : "+str(divdep) +"\n" )
+
+        sueldo_salarios=int(input("Dime tu Sueldo y salarios Total : "))
+        divsue=(sueldo_salarios/2)
+        lista9_1.append(divsue)
+        lista9_2.append(divsue)
+
+        archivoA.write("Saldos y Salarios : "+str(divsue) +"\n" )
+        
+        comision=float(input("Dime la Comision de Ventas Proyectadas (.1) : "))
+
+        resultadoco1=(totalventasS1*comision)
+        resultadoco2=(totalventasS2*comision)
+        lista9_1.append(resultadoco1)
+        lista9_2.append(resultadoco2)
+
+        archivoA.write("Comisiones : "+str(resultadoco1) +"\n" )
+
+        verdad=input("Tus varios se divide en partes iguales semestrales: ")
+        if verdad=="si" or verdad=="SI" or verdad=="Si" or verdad=="sI":
+            print("")
+            vario=int(input("Dime tu Varios Total : "))
+            divva1=(divva1/2)
+            lista9_1.append(divva1)
+            lista9_2.append(divva1)
+            archivoA.write("Varios: "+str(divva1) +"\n" )
+        
+        else:
+            print("")
+            vario1=int(input("Dime tu Vario Del Primer Semestre : "))
+            lista9_1.append(vario1)
+            archivoA.write("Mantenimiento: "+str(vario1) +"\n" )
+
+            vario2=int(input("Dime tu Vario Del Segundo Semestre : "))
+            lista9_2.append(vario2)
+            print(separador)
+        print("")
+
+
+        intereses=float(input("Dime los intereses por prestamo Total : "))
+        divi=(intereses/2)
+        lista9_1.append(divi)
+        lista9_2.append(divi)
+        archivoA.write("Intereses por obligaciones: "+str(divi) +"\n" )
+        archivoA.write("\n" )
+        print("")
+
+        totalGIF3=(sum(lista9_1))
+        totalGIF4=(sum(lista9_2))
+        archivoA.write("TOTAL GIF DEL SEMESTRE 1 : "+str(totalGIF3) +"\n" )
+
+        archivoA.write("\n" )
+        archivoA.write("SEGUNDO SEMESTRE:"+"\n")
+        archivoA.write("\n" )
+
+        listanom9=["Depreciacion: ","Sueldos y Salarios: ","Comisiones: ","Varios: ","Intereses por prestamo: "]
+
+        for elemento in listanom9:
+            archivoA.write(str(elemento)+" : "+str(lista9_2[contador26])+"\n")
+            contador26=contador26+1
+
+        archivoA.write("\n" )
+        archivoA.write("TOTAL GIF DEL SEMESTRE 2 : "+str(totalGIF4) +"\n" )
+        archivoA.write("\n" )
+        TOTALGIFF=(totalGIF3+totalGIF4)
+
+        archivoA.write("Total de Gastos de Operacion: "+str(TOTALGIFF)+"\n" )
+
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+        print("")
+        print(separador)
+        print("")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
