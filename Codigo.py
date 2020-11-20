@@ -502,54 +502,87 @@ try:
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.write("\n" )
         archivoA.close()
-        
-    
         #Final Tabla 6
         
         
         #TABLA 7
-        
-        
-
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"7-Presupuesto de Mano de Obra Directa" +"-"*15 +"\n" )
+        archivoA.write("\n" )
+        print("")
+        print("7-Presupuesto de Mano de Obra Directa")
+        listaHorasReq=[]
 
         for valor in (listanombreproduc):
-            
-            u_producir= int(input(f"Cuantas unidades se producieron primer semestre de {listanombreproduc[contador27]} : "))
-        
-            h_requeridas= float(input("Cuantas horas se ocuparon: "))
+            print("")
+            print("PRIMER SEMESTRE: ")
+            archivoA.write("PRIMER SEMESTRE  :"+"\n" )
+            print("")
+            print(valor+":")
+            print("")
+            archivoA.write(str(valor)+" : "+"\n" )
+            archivoA.write("\n" )
+            u_producir=(lista_unidad_producir[contador27])
+            archivoA.write("Unidades a producir : "+str(u_producir)+"\n" )
+            h_requeridas= float(input("Cuantas horas se ocuparon por unidad : "))
+            listaHorasReq.append(h_requeridas)
+            archivoA.write("Horas requeridas por Unidad : "+str(h_requeridas)+"\n" )
     
             cuota_hora= float(input("Cuota por hora: "))
+            print(separador)
     
             total_horas= (u_producir*h_requeridas)
+            archivoA.write("Total de horas requeridas por unidad : "+str(total_horas)+"\n" )
+            archivoA.write("Cuota por hora : "+str(cuota_hora)+"\n" )
         
             lista_total_horas_1.append(total_horas)
     
             importe_MOD= (total_horas*cuota_hora)
+            archivoA.write("IMPORTE DE MOD : "+str(importe_MOD)+"\n" )
+            archivoA.write("\n" )
     
             lista_importeMOD_1.append(importe_MOD)
     
             T_horas_semestre_1= sum(lista_total_horas_1)
     
             Total_MOD1= sum(lista_importeMOD_1)
-    
-    
-            contador27= contador27 +1
+            contador27= contador27+2
 
-#print(T_horas_semestre_1)
-#print(Total_MOD1)
+        archivoA.write("TOTAL DE HORAS REQUERIDAS DEL PRIMER SEMESTRE : "+str(T_horas_semestre_1)+"\n" )
+        archivoA.write("TOTAL MOD DEL PRIMER SEMESTRE : "+str(Total_MOD1)+"\n" )
+        archivoA.write("------------------------------------------------"+"\n" )
+        archivoA.write("\n" )
 
+        contador28=1
+        contador29=0
         for valor in (listanombreproduc):
-            u_producir2= int(input(f"Cuantas unidades se producieron segundo semestre de {listanombreproduc[contador28]} : "))
-    
-            h_requeridas2= float(input("Cuantas horas se ocuparon: "))
+            print("")
+            print("SEGUNDO SEMESTRE: ")
+            archivoA.write("SEGUNDO SEMESTRE  :"+"\n" )
+            print("")
+            print(valor+":")
+            print("")
+            archivoA.write(str(valor)+" :"+"\n" )
+            archivoA.write("\n" )
+
+            u_producir2=(lista_unidad_producir[contador28])
+            archivoA.write("Unidades a producir : "+str(u_producir2)+"\n" )
+
+            h_requeridas2=(listaHorasReq[contador29])
+            archivoA.write("Horas requeridas por Unidad : "+str(h_requeridas2)+"\n" )
     
             cuota_hora2= float(input("Cuota por hora: "))
+            print(separador)
     
-            total_horas2= (u_producir2*h_requeridas2)
+            total_horas2=(u_producir2*h_requeridas2)
+            archivoA.write("Total de horas requeridas por unidad : "+str(total_horas2)+"\n" )
+            archivoA.write("Cuota por hora : "+str(cuota_hora2)+"\n" )
         
             lista_total_horas_2.append(total_horas2)
     
             importe_MOD2= (total_horas2*cuota_hora2)
+            archivoA.write("IMPORTE DE MOD : "+str(importe_MOD2)+"\n" )
+            archivoA.write("\n" )
     
             lista_importeMOD_2.append(importe_MOD2)
     
@@ -557,120 +590,26 @@ try:
     
             Total_MOD2= sum(lista_importeMOD_2)
     
-    
-            contador28= contador28 +1
+            contador28= contador28+2
+            contador29=contador29+1
+        
+        archivoA.write("TOTAL DE HORAS REQUERIDAS DEL SEGUNDO SEMESTRE : "+str(T_horas_semestre_2)+"\n" )
+        archivoA.write("TOTAL MOD DEL SEGUNDO SEMESTRE : "+str(Total_MOD2)+"\n" )
+        archivoA.write("\n" )
 
-#print(T_horas_semestre_2)
-#print(Total_MOD2)
-
-        print(f"El total de horas requeridas  por semestre es de {T_horas_semestre_1 + T_horas_semestre_2}")
-
-        print(f"El total de M.O.D  por semestre es de {Total_MOD1 + Total_MOD2}")
-
-        #AQUI TE DEJO LAS 2 VARIABLES FINALES
         T_H_Requeridas= T_horas_semestre_1 + T_horas_semestre_2
-        #ESTA DE ABAJO ES LA QUE ME PEDIAS, LA DE 1,350,900 DANY
         T_MOD_porSemestre= Total_MOD1+Total_MOD2
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        #tabla 8 de aqui pa abajo 
+        archivoA.write("------------------------------------------------"+"\n" )
+        archivoA.write("TOTAL DE HORAS REQUERIDAS DEL "+str(año2)+" : "+str(T_H_Requeridas)+"\n" )
+        archivoA.write("TOTAL DE MOD DEL "+str(año2)+" : "+str(T_MOD_porSemestre)+"\n" )
+        archivoA.write("\n" )
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n" )
+        archivoA.close()
+        
+
+        #tabla 8 
         archivoA=open("./respuestas.txt" , 'a')
         archivoA.write("-"*15+"8-Presupuesto de Gastos Indirectos de Fabricacion" +"-"*15 +"\n" )
         archivoA.write("\n" )
