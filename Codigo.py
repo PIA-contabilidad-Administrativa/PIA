@@ -858,6 +858,12 @@ try:
         contador1=0
         contador2=0
         contador3=3
+        
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"9-Presupuesto de Gastos de Operacion" +"-"*15 +"\n" )
+        print("-"*15+"9-Gastos de Administracion y Ventas:" +"-"*15)
+        print("")
+        archivoA.write("\n" )
 
 
         for valor in (listanombreproduc):
