@@ -843,30 +843,48 @@ try:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        # YO HAGO LA TABLA 9 BRO Y LA 10 LA HACEMOS JUNTOS 
-        
+            
         #tabla 10
         #listapreciocompra  precio compra 
         #lista_req requerimiento de material 
         #listaHorasReq horas requeridas por unidad 
         # costoH_GIF
         #Esto es lo que ocuparemos para la tabla 10
+        #print(listapreciocompra)
+        #print(lista_req)
+        #print(listaHorasReq)
+        #print(costoH_GIF)
+        lista_costo_unitario=[]
+        lista_nueva=[]
+        contador=0
+        contador1=0
+        contador2=0
+        contador3=3
+
+
+        for valor in (listanombreproduc):
+            contador1=0
+            print(listanombreproduc[contador])
+
+            lista_nueva=[]
     
+    
+            x,y,z=(lista_req[contador2:contador3])
+            lista_nueva.append(x)
+            lista_nueva.append(y)
+            lista_nueva.append(z)
+            
+            for cantidad in (lista_nueva):
+                lista_costo_unitario.append(listapreciocompra[contador1]*cantidad)
+                    
+                contador1+=1
+                    
+        contador2= contador2+3
+        contador3=contador3+3
+        contador=contador+1
+
+    print(lista_costo_unitario)
+            
 
         
 
