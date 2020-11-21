@@ -738,7 +738,7 @@ try:
         archivoA.write("TOTAL GIF "+str(año2)+" $: "+str(TOTALGIF) +"\n" )
         archivoA.write("Total horas M.O.D. Anual:"+str(T_H_Requeridas)+"\n" )
         x=(TOTALGIF/T_H_Requeridas)
-        z=round(x)
+        z=round(x,2)
         costoH_GIF=(z)
         archivoA.write("(=) Costo por Hora de G.I.F. "+"$ : "+str(costoH_GIF)+"\n" )
 
@@ -775,7 +775,7 @@ try:
 
         archivoA.write("Saldos y Salarios : "+str(divsue) +"\n" )
         
-        comision=float(input("Dime la Comision de Ventas Proyectadas (.1) : "))
+        comision=float(input("Dime la Comision de Ventas Proyectadas (0.001) : "))
 
         resultadoco1=(totalventasS1*comision)
         resultadoco2=(totalventasS2*comision)
@@ -783,7 +783,7 @@ try:
         lista9_2.append(resultadoco2)
 
         archivoA.write("Comisiones : "+str(resultadoco1) +"\n" )
-
+        print("")
         verdad=input("Tus varios se divide en partes iguales semestrales: ")
         if verdad=="si" or verdad=="SI" or verdad=="Si" or verdad=="sI":
             print("")
@@ -797,7 +797,7 @@ try:
             print("")
             vario1=int(input("Dime tu Vario Del Primer Semestre : "))
             lista9_1.append(vario1)
-            archivoA.write("Mantenimiento: "+str(vario1) +"\n" )
+            archivoA.write("Varios: "+str(vario1) +"\n" )
 
             vario2=int(input("Dime tu Vario Del Segundo Semestre : "))
             lista9_2.append(vario2)
@@ -841,8 +841,131 @@ try:
         print(separador)
         print("")
 
+    
+        #tabla 10
+        #listapreciocompra  precio compra 
+        #lista_req requerimiento de material 
+        #listaHorasReq horas requeridas por unidad 
+        # costoH_GIF
+        #Esto es lo que ocuparemos para la tabla 10
 
 
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<<<<<<< HEAD
             
         #tabla 10
         #listapreciocompra  precio compra 
@@ -885,10 +1008,242 @@ try:
 
     print(lista_costo_unitario)
             
+=======
+
+
+
+
+        #ESTADO DE RESULTADOS 
+        print("")
+        print(separador)
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"ESTADO DE RESULTADOS" +"-"*15 +"\n" )
+        print("-"*15+"ESTADO DE RESULTADOS " +"-"*15)
+        print("")
+        ISR=float(input("Dime el porcentaje de ISR (0.35) : "))
+        PTU=float(input("Dime el porcentaje de PTU (0.1) : "))
+        archivoA.write("\n" )
+        archivoA.write("VENTAS : "+str(VENTASTOTALES)+"\n" )
+
+        archivoA.write("COSTO DE VENTAS : "+"AQUI VA LO DE LUIS"+"\n" )
+        archivoA.write("UTILIDAD BRUTA : "+"VENTASTOTALES - COSTO DE VENTAS"+"\n" )
+
+        archivoA.write("GASTO DE OPERACION : "+str(TOTALGIFF)+"\n" )
+
+        archivoA.write("UTILIDAD DE OPERACION : "+"UTILIDAD BRUTA - GASTO DE OPERACION "+"\n" )
+        archivoA.write("ISR : "+"UTILIDAD DE OPERACION  *  ISR "+"\n" )
+        archivoA.write("PTU : "+"UTILIDAD DE OPERACION  *  PTU "+"\n" )
+        archivoA.write("UTILIDAD NETA  : "+"UTILIDAD DE OPERACION  -ISR - PTU "+"\n" )
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+        print("")
+        print(separador)
+        print("")
+
+
+
+        #ESTADO DE FLUJO EN EFECTIVO
+        print("")
+        print(separador)
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"ESTADO DE FLUJO EN EFECTIVO" +"-"*15 +"\n" )
+        print("-"*15+"ESTADO DE FLUJO EN EFECTIVO" +"-"*15)
+        print("")
+        archivoA.write("\n")
+
+        saldo_inicial=float(input("Dime el saldo inicial en Efectivo : "))
+        archivoA.write("Saldo Inicial de Efectivo : "+str(saldo_inicial)+"\n" )
+        archivoA.write("\n")
+
+        archivoA.write("ENTRADAS :"+"\n" )
+        archivoA.write("COBRANZA "+str(año)+" : "+str(cobranza)+"\n" )
+        archivoA.write("COBRANZA "+str(año2)+" : "+str(saldoCliente)+"\n" )
+        archivoA.write("\n")
+        TE=(cobranza+saldoCliente)
+        archivoA.write("Total de entradas :"+str(TE)+"\n" )
+
+        ED=(saldo_inicial-TE)
+        archivoA.write("Efectivo Disponible :"+str(ED)+"\n" )
+        archivoA.write("\n")
+        archivoA.write("SALIDAS :"+"\n" )
+        archivoA.write("\n")
+
+        archivoA.write("Provedores del "+str(año)+" : "+str(saldo_proveedores)+"\n" )
+        archivoA.write("Provedores del "+str(año2)+" : "+str(por_proveedores)+"\n" )
+        archivoA.write("Pago de mano de obra directa : "+str(T_MOD_porSemestre)+"\n" )
+
+        PGIF=(depreciacion-TOTALGIF)
+        PGO=(depreciacion2-TOTALGIFF)
+
+        archivoA.write("Pago Gastos Indirectos de Fabricacion : "+str(PGIF)+"\n" )
+        
+
+        archivoA.write("Pago de Gastos de Operacion : "+str(PGO)+"\n" )
+
+        CAFM=float(input("Dime tu Compra de Activo Fijo (Maquinaria) : "))
+        archivoA.write("Compra de Activo Fijo (Maquinaria): "+str(CAFM)+"\n" )
+
+        PISR=float(input(f"Dime el pago ISR {año} : "))
+        archivoA.write("Pago ISR"+str(año)+" : "+str(PISR)+"\n" )
+        archivoA.write("\n")
+        TS=(saldo_proveedores+por_proveedores+T_MOD_porSemestre+PGO+CAFM+PISR+PGIF)
+
+        archivoA.write("TOTAL SALIDAS : "+str(TS)+"\n" )
+        FEA=(ED-TS)
+        archivoA.write("FLUJO DE EFECTIVO ACTUAL  : "+str(FEA)+"\n" )
+        archivoA.write("\n")
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+        print("")
+        print(separador)
+        print("")
+
+
+
+        # BALANCE GENERAL 
+        print("")
+        print(separador)
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"BALANCE GENERAL" +"-"*15 +"\n" )
+        print("-"*15+"BALANCE GENERAL" +"-"*15)
+        print("")
+        archivoA.write("\n")
+        archivoA.write("ACTIVO "+"\n")
+        archivoA.write("CIRCULANTE : "+"\n")
+        archivoA.write("\n")
+        archivoA.write("Efectivo : $ "+str(FEA)+"\n")
+        archivoA.write("Clientes : " +str(VENTASTOTALES)+"\n")
+
+        FYE=float(input("Dime los funcionarios y empleados : " ))
+        archivoA.write("Funcionarios y Empleados : " +str(FYE)+"\n")
+
+        DD=float(input("Dime los Deudores Diversos : "))
+        archivoA.write("Deudores Diversos : " +str(DD)+"\n")
+        archivoA.write("Inventario de Materiales : " +"IVENTARIO FINAL DE MATERIALES TABLA 11 LUIS "+"\n")
+        archivoA.write("Inventario de Producto termninado: " +"TABLA 11 LUIS "+"\n")
+
+
+        TAC=(FEA+VENTASTOTALES+FYE+DD)
+        #IVENTARIO DE MATERIALES + INVENTARIO DE PRODUCTO TERMINADO 
+        archivoA.write("TOTAL DE ACTIVO CIRCULANTE : " +str(TAC)+"\n")
+        archivoA.write("\n")
+        archivoA.write("NO CIRCULANTE : "+"\n")
+        archivoA.write("\n")
+
+        terreno=float(input("Dime el Terreno : "))
+        archivoA.write("Terreno : " +str(terreno)+"\n")
+
+        plantaye=float(input("Dime la Planta y Equipo : "))
+        PYE=(plantaye+CAFM)
+        archivoA.write("Planta y Equipo : " +str(PYE)+"\n")
+
+        depreciaciona=float(input("Dime la Depreciacion Acumulada : "))
+        DA=(depreciacion+depreciacion2-depreciaciona)
+
+        archivoA.write("Depreciacion Acumulada : " +str(DA)+"\n")
+
+        TANC=(terreno+PYE+DA)
+        archivoA.write("\n")
+        archivoA.write("TOTAL ACTIVO NO CIRCULANTE : " +str(TANC)+"\n")
+        archivoA.write("\n")
+        AT=(TAC+TANC)
+        archivoA.write("ACTIVO TOTAL : " +str(AT)+"\n")
+        archivoA.write("\n")
+
+        archivoA.write("PASIVO "+"\n")
+        archivoA.write("CORTO PLAZO : "+"\n")
+        archivoA.write("\n")
+        archivoA.write("Proveedores : " +str(saldo_proveedores_totales)+"\n")
+        documentospa=float(input("Dime los Documentos por Pagar : "))
+        archivoA.write("Documentos por Pagar : " +str(documentospa)+"\n")
+
+        archivoA.write("ISR por Pagar : " +"ISR LUIS "+"\n")
+        archivoA.write("PTU por Pagar : " +"PTU BALANCE GENERAL  LUIS "+"\n")
+
+        archivoA.write("\n")
+        TPCP=(saldo_proveedores_totales+documentospa)#ISR +PTU  luis
+        archivoA.write("TOTAL DE PASIVO CORTO PLAZO : "+str(TPCP)+"\n")
+        archivoA.write("\n")
+
+        archivoA.write("LARGO PLAZO : "+"\n")
+        archivoA.write("\n")
+
+        obligacionporpagar=float(input("Dime tus Obligaciones por pagar : "))
+        archivoA.write("Obligaciones por pagar : "+str(obligacionporpagar)+"\n")
+        archivoA.write("\n")
+
+        TPLP=(obligacionporpagar)
+
+        archivoA.write("TOTAL PASIVO LARGO PLAZO : "+str(obligacionporpagar)+"\n")
+        archivoA.write("\n")
+
+        PT=(TPCP+TPLP)
+        archivoA.write("PASIVO TOTAL : "+str(PT)+"\n")
+
+        archivoA.write("\n")
+
+        archivoA.write("CAPITAL CONTABLE : "+"\n")
+        archivoA.write("\n")
+
+        capaportado=float(input("Dime tu Capital Aportado : "))
+        archivoA.write("Capital Aportado : "+str(capaportado)+"\n")
+
+        capganado=float(input("Dime tu Capital Ganado : "))
+        archivoA.write("Capital Ganado : "+str(capganado)+"\n")
+
+
+        archivoA.write("Utlidad del Ejercicio : "+"utilidad neta"+"\n")#LUIS ESTADO DE RESULTADOS 
+
+
+        archivoA.write("\n")
+
+        TCC=(capaportado+capganado)# + UTILIDAD NETA 
+        archivoA.write("TOTAL DE CAPITAL CONTABLE  : "+"TCC"+"\n")
+        archivoA.write("\n")
+
+        SUMAPYC=(PT+TCC)
+        archivoA.write("SUMA DE PASIVO Y CAPITAL   : "+"SUMAPYC"+"\n")
+        archivoA.write("\n")
+        resultadofinal=(AT-SUMAPYC)
+        archivoA.write("\n")
+        archivoA.write("RESULTADO FINAL : "+str(resultadofinal)+"\n")
+
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+        print("")
+        print(separador)
+        print("")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
 
 
+
+
+
+    
+
+        
 
 
 
