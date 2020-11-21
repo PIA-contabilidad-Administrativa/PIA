@@ -853,44 +853,71 @@ try:
         #print(listaHorasReq)
         #print(costoH_GIF)
         lista_costo_unitario=[]
-        lista_nueva=[]
         contador=0
         contador1=0
         contador2=0
         contador3=3
         
+        
         archivoA=open("./respuestas.txt" , 'a')
-        archivoA.write("-"*15+"9-Presupuesto de Gastos de Operacion" +"-"*15 +"\n" )
-        print("-"*15+"9-Gastos de Administracion y Ventas:" +"-"*15)
+        archivoA.write("-"*15+"10-Determinación del Costo Unitario de Productos Terminados" +"-"*15 +"\n" )
+        print("-"*15+"10-Determinación del Costo Unitario de Productos Terminados" +"-"*15)
         print("")
-        archivoA.write("\n" )
 
+        lista_costo_unitario=[]
+        lista_nueva=[]
+        
+        contador=0
+        contador1=0
+        contador2=0
+        contador3=3
+        contador4=0
 
+ 
         for valor in (listanombreproduc):
+            archivoA.write("\n")
             contador1=0
             print(listanombreproduc[contador])
-
+            archivoA.write(valor+": "+"\n")
+            
             lista_nueva=[]
-    
-    
+            
+            mano_obra=float(input("Cuanto es de mano de obra: "))
+            resultado1= mano_obra*lista_cantidad[contador4]
+            
+            v_GIF= float(input("Cuanto es de GIF: "))
+            resultado2= v_GIF*lista_cantidad[contador4]
+            
+            contador4+=1
+            
             x,y,z=(lista_req[contador2:contador3])
             lista_nueva.append(x)
             lista_nueva.append(y)
             lista_nueva.append(z)
-            
             for cantidad in (lista_nueva):
                 lista_costo_unitario.append(listapreciocompra[contador1]*cantidad)
-                    
                 contador1+=1
-                    
-        contador2= contador2+3
-        contador3=contador3+3
-        contador=contador+1
-
-        print(lista_costo_unitario)
+                
+            lista_costo_unitario.append(resultado1)
+            lista_costo_unitario.append(resultado2)
             
+            COSTOUF=(sum(lista_costo_unitario))
+            archivoA.write("COSTO UNITARIO FINAL : "+str(COSTOUF)+"\n")
+
+            lista_costo_unitario=[]
+            contador2= contador2+3
+            contador3=contador3+3
+            contador=contador+1
+
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+        print("")
+        print(separador)
+        print("")
 
 
+        
 
 
 
