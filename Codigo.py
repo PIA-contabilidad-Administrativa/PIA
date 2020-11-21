@@ -995,6 +995,72 @@ try:
         print("")
 
 
+
+        #ESTADO DE FLUJO EN EFECTIVO
+        print("")
+        print(separador)
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"ESTADO DE FLUJO EN EFECTIVO" +"-"*15 +"\n" )
+        print("-"*15+"ESTADO DE FLUJO EN EFECTIVO" +"-"*15)
+        print("")
+        archivoA.write("\n")
+
+        saldo_inicial=float(input("Dime el saldo inicial en Efectivo : "))
+        archivoA.write("Saldo Inicial de Efectivo : "+str(saldo_inicial)+"\n" )
+        archivoA.write("\n")
+
+        archivoA.write("ENTRADAS :"+"\n" )
+        archivoA.write("COBRANZA "+str(año)+" : "+str(cobranza)+"\n" )
+        archivoA.write("COBRANZA "+str(año2)+" : "+str(saldoCliente)+"\n" )
+        archivoA.write("\n")
+        TE=(cobranza+saldoCliente)
+        archivoA.write("Total de entradas :"+str(TE)+"\n" )
+
+        ED=(saldo_inicial-TE)
+        archivoA.write("Efectivo Disponible :"+str(ED)+"\n" )
+        archivoA.write("\n")
+        archivoA.write("SALIDAS :"+"\n" )
+        archivoA.write("\n")
+
+        archivoA.write("Provedores del "+str(año)+" : "+str(saldo_proveedores)+"\n" )
+        archivoA.write("Provedores del "+str(año2)+" : "+str(por_proveedores)+"\n" )
+        archivoA.write("Pago de mano de obra directa : "+str(T_MOD_porSemestre)+"\n" )
+
+        PGIF=(depreciacion-TOTALGIF)
+        PGO=(depreciacion2-TOTALGIFF)
+
+        archivoA.write("Pago Gastos Indirectos de Fabricacion : "+str(PGIF)+"\n" )
+        
+
+        archivoA.write("Pago de Gastos de Operacion : "+str(PGO)+"\n" )
+
+        CAFM=float(input("Dime tu Compra de Activo Fijo (Maquinaria) : "))
+        archivoA.write("Compra de Activo Fijo (Maquinaria): "+str(CAFM)+"\n" )
+
+        PISR=float(input(f"Dime el pago ISR {año} : "))
+        archivoA.write("Pago ISR"+str(año)+" : "+str(PISR)+"\n" )
+        archivoA.write("\n")
+        TS=(saldo_proveedores+por_proveedores+T_MOD_porSemestre+PGO+CAFM+PISR+PGIF)
+
+        archivoA.write("TOTAL SALIDAS : "+str(TS)+"\n" )
+        FEA=(ED-TS)
+        archivoA.write("FLUJO DE EFECTIVO ACTUAL  : "+str(FEA)+"\n" )
+        archivoA.write("\n")
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+        print("")
+        print(separador)
+        print("")
+
+
+
+        
+
+
+
+
+
     
 
         
