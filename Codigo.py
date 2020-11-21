@@ -866,6 +866,7 @@ try:
 
         lista_costo_unitario=[]
         lista_nueva=[]
+        listaCUT=[]
         
         contador=0
         contador1=0
@@ -883,10 +884,10 @@ try:
             lista_nueva=[]
             
             mano_obra=float(input("Cuanto es de mano de obra: "))
-            resultado1= mano_obra*lista_cantidad[contador4]
+            resultado1= mano_obra*listaHorasReq[contador4]
             
             v_GIF= float(input("Cuanto es de GIF: "))
-            resultado2= v_GIF*lista_cantidad[contador4]
+            resultado2= v_GIF*listaHorasReq[contador4]
             
             contador4+=1
             
@@ -902,6 +903,7 @@ try:
             lista_costo_unitario.append(resultado2)
             
             COSTOUF=(sum(lista_costo_unitario))
+            listaCUT.append(COSTOUF)
             archivoA.write("COSTO UNITARIO FINAL : "+str(COSTOUF)+"\n")
 
             lista_costo_unitario=[]
