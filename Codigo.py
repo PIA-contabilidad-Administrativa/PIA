@@ -848,6 +848,153 @@ try:
         #listaHorasReq horas requeridas por unidad 
         # costoH_GIF
         #Esto es lo que ocuparemos para la tabla 10
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #ESTADO DE RESULTADOS 
+        print("")
+        print(separador)
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"ESTADO DE RESULTADOS" +"-"*15 +"\n" )
+        print("-"*15+"ESTADO DE RESULTADOS " +"-"*15)
+        print("")
+        ISR=float(input("Dime el porcentaje de ISR (0.35) : "))
+        PTU=float(input("Dime el porcentaje de PTU (0.1) : "))
+        archivoA.write("\n" )
+        archivoA.write("VENTAS : "+str(VENTASTOTALES)+"\n" )
+        archivoA.write("COSTO DE VENTAS : "+"AQUI VA LO DE LUIS"+"\n" )
+        archivoA.write("UTILIDAD BRUTA : "+"VENTASTOTALES - COSTO DE VENTAS"+"\n" )
+        archivoA.write("GASTO DE OPERACION : "+str(TOTALGIFF)+"\n" )
+        archivoA.write("UTILIDAD DE OPERACION : "+"UTILIDAD BRUTA - GASTO DE OPERACION "+"\n" )
+        archivoA.write("ISR : "+"UTILIDAD DE OPERACION  *  ISR "+"\n" )
+        archivoA.write("PTU : "+"UTILIDAD DE OPERACION  *  PTU "+"\n" )
+        archivoA.write("UTILIDAD NETA  : "+"UTILIDAD DE OPERACION  -ISR - PTU "+"\n" )
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+        print("")
+        print(separador)
+        print("")
+
+
     
 
         
