@@ -1164,7 +1164,7 @@ try:
         archivoA.write("Planta y Equipo : " +str(PYE)+"\n")
 
         depreciaciona=float(input("Dime la Depreciacion Acumulada : "))
-        DA=(depreciacion+depreciacion2-depreciaciona)
+        DA=(-(depreciaciona+depreciacion+depreciacion2))
 
         archivoA.write("Depreciacion Acumulada : " +str(DA)+"\n")
 
@@ -1221,7 +1221,7 @@ try:
 
         archivoA.write("\n")
 
-        TCC=(capaportado+capganado)# + UTILIDAD NETA 
+        TCC=(capaportado+capganado+a)
         archivoA.write("TOTAL DE CAPITAL CONTABLE  : "+str(TCC)+"\n")
         archivoA.write("\n")
 
