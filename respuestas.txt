@@ -449,7 +449,7 @@ TOTAL GIF DEL SEMESTRE 2 : 151558.0
 Total de Gastos de Operacion: 305233.0
 ///////////////////////////////////////////////////////////////
 
----------------10-Determinación del Costo Unitario de Productos Terminados---------------
+---------------10-Determinacion del Costo Unitario de Productos Terminados---------------
 
 CAMISAS CL: 
 COSTO UNITARIO FINAL : 75.84
