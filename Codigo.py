@@ -843,15 +843,6 @@ try:
 
     
         #tabla 10
-        #listapreciocompra  precio compra 
-        #lista_req requerimiento de material 
-        #listaHorasReq horas requeridas por unidad 
-        # costoH_GIF
-        #Esto es lo que ocuparemos para la tabla 10
-        #print(listapreciocompra)
-        #print(lista_req)
-        #print(listaHorasReq)
-        #print(costoH_GIF)
         lista_costo_unitario=[]
         contador=0
         contador1=0
@@ -1038,20 +1029,34 @@ try:
         archivoA.write("-"*15+"ESTADO DE RESULTADOS" +"-"*15 +"\n" )
         print("-"*15+"ESTADO DE RESULTADOS " +"-"*15)
         print("")
-        ISR=float(input("Dime el porcentaje de ISR (0.35) : "))
-        PTU=float(input("Dime el porcentaje de PTU (0.1) : "))
         archivoA.write("\n" )
         archivoA.write("VENTAS : "+str(VENTASTOTALES)+"\n" )
 
-        archivoA.write("COSTO DE VENTAS : "+"AQUI VA LO DE LUIS"+"\n" )
-        archivoA.write("UTILIDAD BRUTA : "+"VENTASTOTALES - COSTO DE VENTAS"+"\n" )
+        archivoA.write("COSTO DE VENTAS : "+str(COSTOVENTAS)+"\n" )
+        UB=(VENTASTOTALES-COSTOVENTAS)
+        archivoA.write("UTILIDAD BRUTA : "+str(UB)+"\n" )
 
         archivoA.write("GASTO DE OPERACION : "+str(TOTALGIFF)+"\n" )
+        
+        UO=(UB-TOTALGIFF)
+        archivoA.write("UTILIDAD DE OPERACION : "+str(UO)+"\n" )
 
-        archivoA.write("UTILIDAD DE OPERACION : "+"UTILIDAD BRUTA - GASTO DE OPERACION "+"\n" )
-        archivoA.write("ISR : "+"UTILIDAD DE OPERACION  *  ISR "+"\n" )
-        archivoA.write("PTU : "+"UTILIDAD DE OPERACION  *  PTU "+"\n" )
-        archivoA.write("UTILIDAD NETA  : "+"UTILIDAD DE OPERACION  -ISR - PTU "+"\n" )
+        porcentaje=(float(input("Dime el Porcentaje de ISR : ")))
+        ISR=(UO*porcentaje)
+        z=round(ISR,2)
+
+        archivoA.write("ISR : "+str(z)+"\n" )
+
+        porcentaje2=float(input("Dime el Porcentaje de PTU : "))
+        PTU=(UO*porcentaje2)
+        x=round(PTU,2)
+        
+        archivoA.write("PTU : "+str(x)+"\n" )
+
+        UN=(UO-ISR-PTU)
+        a=round(UN,2)
+
+        archivoA.write("UTILIDAD NETA  : "+str(a)+"\n" )
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.write("\n")
         archivoA.close()
