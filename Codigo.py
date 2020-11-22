@@ -974,62 +974,59 @@ try:
         print("")
 
 
-        
+        # TABLA ESTADO DE COSTO DE PRODUCCION Y VENTAS 
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"Estado de Costo de Produccion y Ventas" +"-"*15 +"\n" )
+        print("-"*15+"Estado de Costo de Produccion y Ventas" +"-"*15)
+        print("")
+        archivoA.write("\n")
+
+        saldoI=float(input("Dime el Saldo Inicial de Materiales : "))
+        archivoA.write("Saldo Incial de Materiales : "+str(saldoI)+"\n")
+
+        compras_materiales=(sum(compras_totales))
+        archivoA.write("Compra de Materiales : "+str(compras_materiales)+"\n")
+
+        Material_d=(saldoI+compras_materiales)
+        archivoA.write("MATERIAL DISPONIBLE : "+str(Material_d)+"\n")
+
+        inventarioF=(total_CU)
+        archivoA.write("Inventario Final de Materiales : "+str(inventarioF)+"\n")
+
+        materialU=(Material_d-inventarioF)
+        archivoA.write("MATERIALES UTILIZADOS : "+str(materialU)+"\n")
+
+        manodo=(T_MOD_porSemestre)
+        archivoA.write("Mano de Obra Directa : "+str(manodo)+"\n")
 
 
 
+        gfi=(TOTALGIF)
+        archivoA.write("Gasto de Fabricacion Indirectos : "+str(gfi)+"\n")
+
+        COSTOPRO=(materialU+manodo+gfi)
+        archivoA.write("COSTO DE PRODUCCION : "+str(COSTOPRO)+"\n")
+
+        inventarioI_terminados=float(input("Dime tu Inventario Inicial de Productos Terminados : "))
+        archivoA.write("Inventario Inicial de Productos Terminados : "+str(inventarioI_terminados)+"\n")
+
+        TOTAL_PRO_DIS=(COSTOPRO+inventarioI_terminados)
+        archivoA.write("TOTAL DE PRODUCCION DISPONIBLE : "+str(TOTAL_PRO_DIS)+"\n")
+
+        inventarioF_terminados=(inv_final_terminado)
+        archivoA.write("Inventario Final de Productos Terminados  : "+str(inventarioF_terminados)+"\n")
 
 
+        COSTOVENTAS=(TOTAL_PRO_DIS-inventarioF_terminados)
+        archivoA.write("COSTO DE VENTAS  : "+str(COSTOVENTAS)+"\n")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        archivoA.write("\n")
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+        print("")
+        print(separador)
+        print("")
 
 
 
