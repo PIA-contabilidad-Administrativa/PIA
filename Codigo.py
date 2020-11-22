@@ -1086,7 +1086,7 @@ try:
         TE=(cobranza+saldoCliente)
         archivoA.write("Total de entradas :"+str(TE)+"\n" )
 
-        ED=(saldo_inicial-TE)
+        ED=(saldo_inicial+TE)
         archivoA.write("Efectivo Disponible :"+str(ED)+"\n" )
         archivoA.write("\n")
         archivoA.write("SALIDAS :"+"\n" )
@@ -1096,8 +1096,8 @@ try:
         archivoA.write("Provedores del "+str(año2)+" : "+str(por_proveedores)+"\n" )
         archivoA.write("Pago de mano de obra directa : "+str(T_MOD_porSemestre)+"\n" )
 
-        PGIF=(depreciacion-TOTALGIF)
-        PGO=(depreciacion2-TOTALGIFF)
+        PGIF=(TOTALGIF-depreciacion)
+        PGO=(TOTALGIFF-depreciacion2)
 
         archivoA.write("Pago Gastos Indirectos de Fabricacion : "+str(PGIF)+"\n" )
         
@@ -1108,8 +1108,9 @@ try:
         archivoA.write("Compra de Activo Fijo (Maquinaria): "+str(CAFM)+"\n" )
 
         PISR=float(input(f"Dime el pago ISR {año} : "))
-        archivoA.write("Pago ISR"+str(año)+" : "+str(PISR)+"\n" )
+        archivoA.write("Pago ISR "+str(año)+" : "+str(PISR)+"\n" )
         archivoA.write("\n")
+
         TS=(saldo_proveedores+por_proveedores+T_MOD_porSemestre+PGO+CAFM+PISR+PGIF)
 
         archivoA.write("TOTAL SALIDAS : "+str(TS)+"\n" )
@@ -1137,19 +1138,19 @@ try:
         archivoA.write("CIRCULANTE : "+"\n")
         archivoA.write("\n")
         archivoA.write("Efectivo : $ "+str(FEA)+"\n")
-        archivoA.write("Clientes : " +str(VENTASTOTALES)+"\n")
+        archivoA.write("Clientes : " +str(SALDODECLIENTES)+"\n") #SALDODECLIENTES
 
         FYE=float(input("Dime los funcionarios y empleados : " ))
         archivoA.write("Funcionarios y Empleados : " +str(FYE)+"\n")
 
         DD=float(input("Dime los Deudores Diversos : "))
         archivoA.write("Deudores Diversos : " +str(DD)+"\n")
-        archivoA.write("Inventario de Materiales : " +"IVENTARIO FINAL DE MATERIALES TABLA 11 LUIS "+"\n")
-        archivoA.write("Inventario de Producto termninado: " +"TABLA 11 LUIS "+"\n")
+        archivoA.write("Inventario de Materiales : " +str(total_CU)+"\n")
+        archivoA.write("Inventario de Producto terminado: " +str(inv_final_terminado)+"\n")
 
 
-        TAC=(FEA+VENTASTOTALES+FYE+DD)
-        #IVENTARIO DE MATERIALES + INVENTARIO DE PRODUCTO TERMINADO 
+        TAC=(FEA+SALDODECLIENTES+FYE+DD+total_CU+inv_final_terminado)
+       
         archivoA.write("TOTAL DE ACTIVO CIRCULANTE : " +str(TAC)+"\n")
         archivoA.write("\n")
         archivoA.write("NO CIRCULANTE : "+"\n")
@@ -1182,16 +1183,15 @@ try:
         documentospa=float(input("Dime los Documentos por Pagar : "))
         archivoA.write("Documentos por Pagar : " +str(documentospa)+"\n")
 
-        archivoA.write("ISR por Pagar : " +"ISR LUIS "+"\n")
-        archivoA.write("PTU por Pagar : " +"PTU BALANCE GENERAL  LUIS "+"\n")
+        archivoA.write("ISR por Pagar : " +str(z)+"\n")
+        archivoA.write("PTU por Pagar : " +str(x)+"\n")
 
         archivoA.write("\n")
-        TPCP=(saldo_proveedores_totales+documentospa)#ISR +PTU  luis
+        TPCP=(saldo_proveedores_totales+documentospa+z+x)
         archivoA.write("TOTAL DE PASIVO CORTO PLAZO : "+str(TPCP)+"\n")
         archivoA.write("\n")
 
         archivoA.write("LARGO PLAZO : "+"\n")
-        archivoA.write("\n")
 
         obligacionporpagar=float(input("Dime tus Obligaciones por pagar : "))
         archivoA.write("Obligaciones por pagar : "+str(obligacionporpagar)+"\n")
@@ -1208,7 +1208,6 @@ try:
         archivoA.write("\n")
 
         archivoA.write("CAPITAL CONTABLE : "+"\n")
-        archivoA.write("\n")
 
         capaportado=float(input("Dime tu Capital Aportado : "))
         archivoA.write("Capital Aportado : "+str(capaportado)+"\n")
@@ -1217,17 +1216,17 @@ try:
         archivoA.write("Capital Ganado : "+str(capganado)+"\n")
 
 
-        archivoA.write("Utlidad del Ejercicio : "+"utilidad neta"+"\n")#LUIS ESTADO DE RESULTADOS 
+        archivoA.write("Utlidad del Ejercicio : "+str(a)+"\n")
 
 
         archivoA.write("\n")
 
         TCC=(capaportado+capganado)# + UTILIDAD NETA 
-        archivoA.write("TOTAL DE CAPITAL CONTABLE  : "+"TCC"+"\n")
+        archivoA.write("TOTAL DE CAPITAL CONTABLE  : "+str(TCC)+"\n")
         archivoA.write("\n")
 
         SUMAPYC=(PT+TCC)
-        archivoA.write("SUMA DE PASIVO Y CAPITAL   : "+"SUMAPYC"+"\n")
+        archivoA.write("SUMA DE PASIVO Y CAPITAL   : "+str(SUMAPYC)+"\n")
         archivoA.write("\n")
         resultadofinal=(AT-SUMAPYC)
         archivoA.write("\n")
@@ -1239,6 +1238,8 @@ try:
         print("")
         print(separador)
         print("")
+
+        break
 
 
 
