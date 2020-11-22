@@ -1,7 +1,7 @@
 ---------------1-Respuestas del Presupuesto de Ventas---------------
 
 ------------------------------
-CAMIAS CL:
+CAMISAS CL:
 
 PRIMER SEMESTRE:
 UNIDADES A VENDER: 12000
@@ -59,14 +59,14 @@ Saldo de Clientes del 2016: 3446600.0
 ---------------3-PRESUPUESTO DE PRODUCCION---------------
 
 PRIMER SEMESTRE :
-CAMIAS CL:
-Inventario final de CAMIAS CL del primer semestre: 10000.0
+CAMISAS CL:
+Inventario final de CAMISAS CL del primer semestre: 10000.0
 Total de unidades : 22000.0
 Inventario inicial : 10000.0
 Unidades a Producir: 12000.0
 
 SEGUNDO SEMESTRE :
-Inventario final de CAMIAS CL del segundo semestre: 6500.0
+Inventario final de CAMISAS CL del segundo semestre: 6500.0
 Total de unidades : 16500.0
 Inventario inicial : 10000.0
 Unidades a Producir: 6500.0
@@ -109,7 +109,7 @@ TOTAL 2016 primer semestre y segundo: 14500.0
 
 ---------------4-PRESUPUESTO DE REQUERIMIENTO DE MATERIALES---------------
 
-CAMIAS CL:
+CAMISAS CL:
 PRIMER SEMESTRE:
 
 Unidades a producir:12000.0
@@ -164,7 +164,7 @@ TOTAL DE MATERIAL C:35000.0
 
 ///////////////////////////////////////////////////////////////
 
-CAMIAS CL:
+CAMISAS CL:
 SEGUNDO SEMESTRE:
 
 Unidades a producir:6500.0
@@ -330,7 +330,7 @@ Saldo de Proveedores del 2016 : 1070505.0
 ---------------7-Presupuesto de Mano de Obra Directa---------------
 
 PRIMER SEMESTRE  :
-CAMIAS CL : 
+CAMISAS CL : 
 
 Unidades a producir : 12000.0
 Horas requeridas por Unidad : 2.0
@@ -361,7 +361,7 @@ TOTAL MOD DEL PRIMER SEMESTRE : 720000.0
 ------------------------------------------------
 
 SEGUNDO SEMESTRE  :
-CAMIAS CL :
+CAMISAS CL :
 
 Unidades a producir : 6500.0
 Horas requeridas por Unidad : 2.0
@@ -451,7 +451,7 @@ Total de Gastos de Operacion: 305233.0
 
 ---------------10-Determinación del Costo Unitario de Productos Terminados---------------
 
-CAMIAS CL: 
+CAMISAS CL: 
 COSTO UNITARIO FINAL : 75.84
 
 CAMISAS CE: 
@@ -459,5 +459,13 @@ COSTO UNITARIO FINAL : 87.37
 
 CAMISAS CR: 
 COSTO UNITARIO FINAL : 68.755
+///////////////////////////////////////////////////////////////
+
+---------------11-Valuacion de Inventarios Finales---------------
+
+Inventario Final de Materiales : 47100.0
+
+Inventario Final de Producto Terminado : 1484420.0
+
 ///////////////////////////////////////////////////////////////
 

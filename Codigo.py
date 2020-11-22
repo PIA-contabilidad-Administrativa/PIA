@@ -888,6 +888,7 @@ try:
             
             v_GIF= float(input("Cuanto es de GIF: "))
             resultado2= v_GIF*listaHorasReq[contador4]
+            print("")
             
             contador4+=1
             
@@ -911,6 +912,60 @@ try:
             contador3=contador3+3
             contador=contador+1
 
+        archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+        archivoA.write("\n")
+        archivoA.close()
+        print("")
+        print(separador)
+        print("")
+
+        #TABLA 11
+        archivoA=open("./respuestas.txt" , 'a')
+        archivoA.write("-"*15+"11-Valuacion de Inventarios Finales" +"-"*15 +"\n" )
+        print("-"*15+"11-Valuacion de Inventarios Finales" +"-"*15)
+        print("")
+        archivoA.write("\n")
+
+        lista_total_material=[]
+        lista_costo_total=[]
+        lista_unidades=[]
+        lista_c_unitario=[]
+        lista_inventario=[]
+        contador5=0
+        contador6=0
+        for material in lista_nombre_material:
+            print(lista_nombre_material[contador5])
+            print("")
+            total_material= float(input(f"Dime el total de material {lista_nombre_material[contador5]} : "))
+            lista_total_material.append(total_material)
+            lista_costo_total.append( lista_total_material[contador5]*listapreciocompra[contador5])
+            contador5+=1
+        total_CU=sum(lista_costo_total)
+    
+        archivoA.write("Inventario Final de Materiales : "+str(total_CU)+"\n")
+        archivoA.write("\n")
+        print(separador)
+
+ 
+
+        for nombres in (listanombreproduc):
+            print(listanombreproduc[contador6])
+            print("")      
+            unidades_producto= float(input(f"Total de unidades de {listanombreproduc[contador6]} : "))
+            lista_unidades.append(unidades_producto)
+            
+            c_unitario_total= float(input(f"Dime el costo unatio total de {listanombreproduc[contador6]} :"))
+            lista_c_unitario.append(c_unitario_total)
+            print("")
+            v_inventario=(lista_unidades[contador6]*lista_c_unitario[contador6])
+            lista_inventario.append(v_inventario)            
+            contador6+=1
+        inv_final_terminado=sum(lista_inventario)
+        print(separador)
+        
+
+        archivoA.write("Inventario Final de Producto Terminado : "+str(inv_final_terminado)+"\n")
+        archivoA.write("\n")
         archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
         archivoA.write("\n")
         archivoA.close()
